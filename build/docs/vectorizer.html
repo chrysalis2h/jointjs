@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/prism.css">
+    <link rel="stylesheet" type="text/css" href="css/api.css">
+    <title>Vectorizer API</title>
+</head>
+<body>
+
+    <div class="docs-main">
+        <nav class="docs-nav">
+            <input class="docs-nav-search" type="text" placeholder="i.e. addClass">
+            <img class="docs-nav-search-clear" src="./images/clear.png" title="Clear Search">
+                <ul class="docs-nav-items">
+                    <li class="docs-nav-item">
+                        <a class="docs-nav-item-link" href="#V">V</a>
+                                <ul class="docs-nav-items">
+                                    <li class="docs-nav-item">
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.constructor">constructor</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.annotateString">annotateString</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.createSVGMatrix">createSVGMatrix</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.createSVGPoint">createSVGPoint</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.createSVGTransform">createSVGTransform</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.decomposeMatrix">decomposeMatrix</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.findAnnotationsAtIndex">findAnnotationsAtIndex</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.findAnnotationsBetweenIndexes">findAnnotationsBetweenIndexes</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.isSVGGraphicsElement">isSVGGraphicsElement</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.isVElement">isVElement</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.normalizePathData">normalizePathData</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.rectToPath">rectToPath</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.shiftAnnotations">shiftAnnotations</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.transformLine">transformLine</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.transformPoint">transformPoint</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.transformPolyline">transformPolyline</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.transformRect">transformRect</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.transformStringToMatrix">transformStringToMatrix</a>
+                                    </li>
+                                    <li class="docs-nav-item">
+                                        <a class="docs-nav-item-link" href="#V.prototype">prototype</a>
+                                                <ul class="docs-nav-items">
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.addClass">addClass</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.animateAlongPath">animateAlongPath</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.append">append</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.appendTo">appendTo</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.attr">attr</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.bbox">bbox</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.before">before</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.children">children</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.clone">clone</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.contains">contains</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.convertToPath">convertToPath</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.convertToPathData">convertToPathData</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.defs">defs</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.empty">empty</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.find">find</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.findIntersection">findIntersection</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.findOne">findOne</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.findParentByClass">findParentByClass</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.getBBox">getBBox</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.getTransformToElement">getTransformToElement</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.hasClass">hasClass</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.id">id</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.index">index</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.normalizePath">normalizePath</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.prepend">prepend</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.remove">remove</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.removeAttr">removeAttr</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.removeClass">removeClass</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.rotate">rotate</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.sample">sample</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.scale">scale</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.setAttribute">setAttribute</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.setAttributes">setAttributes</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.svg">svg</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.tagName">tagName</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.text">text</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.toGeometryShape">toGeometryShape</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.toggleClass">toggleClass</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.toLocalPoint">toLocalPoint</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.transform">transform</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.translate">translate</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.translateAndAutoOrient">translateAndAutoOrient</a>
+                                                    </li>
+                                                    <li class="docs-nav-item">
+                                                        <a class="docs-nav-item-link" href="#V.prototype.translateCenterToPoint">translateCenterToPoint</a>
+                                                    </li>
+                                                </ul>        </li>
+                                </ul>        </li>
+                </ul>        </nav>
+        <section class="docs-content">
+            <h1 class="docs-header">Vectorizer API</h1>
+
+            <div class="docs-items">
+                
+    <div id="V" class="docs-item">
+    <div id="V.intro" class="docs-item">
+        <a href="#V.intro" class="docs-item-anchor">
+            <h3 class="docs-item-header">V</h3>
+        </a>
+        <div class="docs-item-content">
+<p>JointJS exports three global variables, the <code class="highlighted">joint</code> namespace, the <b><code class="highlighted"><span class="token constant">V</span></code></b> variable and the <b><code class="highlighted">g</code></b> variable (that is described later in the <a href="geometry.html">Geometry</a> section). The <code class="highlighted"><span class="token constant">V</span></code> variable is a function of a little SVG helper library that we call <q>Vectorizer</q>. The reason why this library sits in its own namespace and not inside the <code class="highlighted">joint</code> namespace is that it can be used completely standalone, even without JointJS. It is a very helpful library making life easier when dealing with SVG. You can think of it as of a very lightweight jQuery for SVG. If you want to use Vectorizer as a standalone library, see the download page that contains both the <b><a href="http://jointjs.com/download#vectorizer">development and minified versions</a></b>.</p>
+        </div>
+    </div>
+    <div id="V.constructor" class="docs-item">
+        <a href="#V.constructor" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.constructor</h3>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">(</span>svg<span class="token punctuation">)</span></code></pre>
+<p>Return a Vectorizer object. If <code class="highlighted">svg</code> parameter is a string, construct SVG DOM elements from the string markup. If <code class="highlighted">svg</code> is an SVG DOM element, just wrap that element by the Vectorizer object and return it. You can think of this function as of the <a href="http://api.jquery.com/jQuery/">jQuery $</a> function except that the <code class="highlighted"><span class="token constant">V</span></code> function does not accept selectors. The Vectorizer object contains a reference to the original SVG DOM element in its <b><code class="highlighted">node</code></b> property.</p>
+
+<pre><code class="highlighted"><span class="token keyword">var</span> vel <span class="token operator">=</span> <span class="token constant">V</span><span class="token punctuation">(</span><span class="token string">'&lt;g>&lt;rect/>&lt;text/>&lt;/g>'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>vel<span class="token punctuation">.</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+        </div>
+    </div>
+    <div id="V.annotateString" class="docs-item">
+        <a href="#V.annotateString" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.annotateString</h3>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">annotateString</span><span class="token punctuation">(</span>string<span class="token punctuation">,</span> annotations <span class="token punctuation">[</span><span class="token punctuation">,</span> opt<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Apply the annotations (see <a href="#V.prototype.text">v.text()</a>) to the string given.</p>
+
+        </div>
+    </div>
+    <div id="V.createSVGMatrix" class="docs-item">
+        <a href="#V.createSVGMatrix" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.createSVGMatrix</h3>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">createSVGMatrix</span><span class="token punctuation">(</span>extension<span class="token punctuation">)</span></code></pre>
+<p>Return the <a href="https://developer.mozilla.org/en/docs/Web/API/SVGMatrix">SVG transformation matrix</a> initialized with the matrix <code class="highlighted">extension</code>. <code class="highlighted">extension</code> is an object of the form: <code class="highlighted"><span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">}</span></code>.</p>
+        </div>
+    </div>
+    <div id="V.createSVGPoint" class="docs-item">
+        <a href="#V.createSVGPoint" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.createSVGPoint</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">createSVGPoint</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span></code></pre>
+        <p>Return the <a href="https://developer.mozilla.org/en/docs/Web/API/SVGPoint">SVG point</a> object initialized with the <code class="highlighted">x</code> and <code class="highlighted">y</code> coordinates.</p>
+        </div>
+    </div>
+    <div id="V.createSVGTransform" class="docs-item">
+        <a href="#V.createSVGTransform" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.createSVGTransform</h3>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">createSVGTransform</span><span class="token punctuation">(</span><span class="token punctuation">[</span>matrix<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+<p>Returns a <a href="https://developer.mozilla.org/en/docs/Web/API/SVGTransform">SVG transform</a> object.</p>
+        </div>
+    </div>
+    <div id="V.decomposeMatrix" class="docs-item">
+        <a href="#V.decomposeMatrix" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.decomposeMatrix</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">decomposeMatrix</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span></code></pre>
+        <p>Decompose the <a href="https://developer.mozilla.org/en/docs/Web/API/SVGMatrix">SVG transformation <code class="highlighted">matrix</code></a> into separate transformations. Return an object of the form: <code class="highlighted"><span class="token punctuation">{</span> translateX<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> translateY<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> scaleX<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> scaleY<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> skewX<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> skewY<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> rotation<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span> <span class="token punctuation">}</span></code>.</p>
+        </div>
+    </div>
+    <div id="V.findAnnotationsAtIndex" class="docs-item">
+        <a href="#V.findAnnotationsAtIndex" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.findAnnotationsAtIndex</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">findAnnotationsAtIndex</span><span class="token punctuation">(</span>annotations<span class="token punctuation">,</span> index<span class="token punctuation">)</span></code></pre>
+        <p>Find all the annotations (see <a href="#V.prototype.text">v.text()</a>) that apply to the character at <code class="highlighted">index</code>.</p>
+
+        </div>
+    </div>
+    <div id="V.findAnnotationsBetweenIndexes" class="docs-item">
+        <a href="#V.findAnnotationsBetweenIndexes" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.findAnnotationsBetweenIndexes</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">findAnnotationsBetweenIndexes</span><span class="token punctuation">(</span>annotations<span class="token punctuation">,</span> start<span class="token punctuation">,</span> end<span class="token punctuation">)</span></code></pre>
+        <p>Find all the annotations (see <a href="#V.prototype.text">v.text()</a>) that apply to all the characters in the <code class="highlighted">start</code> and <code class="highlighted">end</code> range.</p>
+
+        </div>
+    </div>
+    <div id="V.isSVGGraphicsElement" class="docs-item">
+        <a href="#V.isSVGGraphicsElement" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.isSVGGraphicsElement</h3>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">isSVGGraphicsElement</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span></code></pre>
+<p>Return <code class="highlighted"><span class="token boolean">true</span></code> if <code class="highlighted">object</code> is an instance of <a href="https://developer.mozilla.org/en-US/docs/Web/API/SVGGraphicsElement" target="_blank">SVGGraphicsElement</a>.</p>
+
+        </div>
+    </div>
+    <div id="V.isVElement" class="docs-item">
+        <a href="#V.isVElement" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.isVElement</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">isVElement</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span></code></pre>
+        <p>Return <code class="highlighted"><span class="token boolean">true</span></code> if <code class="highlighted">object</code> is a vectorizer element.</p>
+        </div>
+    </div>
+    <div id="V.normalizePathData" class="docs-item">
+        <a href="#V.normalizePathData" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.normalizePathData</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span>pathData<span class="token punctuation">)</span></code></pre>
+        <p>Convert provided <a href="https://www.w3.org/TR/SVG/paths.html#PathData">SVG path data string</a> into a normalized path data string. The normalization uses a restricted subset of path commands; all segments are translated into lineto, curveto, moveto, and closepath segments. Relative path commands are changed into their absolute counterparts, and chaining of coordinates is disallowed.</p>
+        <p>The function will always return a valid path data string; if an input string cannot be normalized, <code class="highlighted"><span class="token string">'M 0 0'</span></code> is returned.</p>
+
+        <p>Command translations:</p>
+        <pre><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 H 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 L 20 10'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 V 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 L 10 20'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 20 C 10 10 25 10 25 20 S 40 30 40 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 20 C 10 10 25 10 25 20 C 25 30 40 30 40 20'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 20 20 Q 40 0 60 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 20 20 C 33.33333333333333 6.666666666666666 46.666666666666664 6.666666666666666 60 20'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 20 20 Q 40 0 60 20 T 100 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 20 20 C 33.33333333333333 6.666666666666666 46.666666666666664 6.666666666666666 60 20 C 73.33333333333333 33.33333333333333 86.66666666666666 33.33333333333333 100 20'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 30 15 A 15 15 0 0 0 15 30'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 30 15 C 21.715728752538098 15.000000000000002 14.999999999999998 21.715728752538098 15 30'</span><span class="token punctuation">;</span></code></pre>
+
+        <p>Relative-to-absolute normalizations:</p>
+        <pre><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'m 10 10'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 m 10 10'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 M 20 20'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 l 10 10'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 L 20 20'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 c 0 10 10 10 10 0'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 C 10 20 20 20 20 10'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 z'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 Z'</span></code></pre>
+
+        <p>Transcription of chained coordinates:</p>
+        <pre><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 20 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 L 20 20'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 L 20 20 30 30'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 L 20 20 L 30 30'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 C 10 20 20 20 20 10 20 0 30 0 30 10'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 C 10 20 20 20 20 10 C 20 0 30 0 30 10'</span><span class="token punctuation">;</span></code></pre>
+
+        <p>Edge cases:</p>
+        <pre><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'L 10 10'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 0 0 L 10 10'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'C 0 10 10 10 10 0'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 0 0 C 0 10 10 10 10 0'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'Z'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 0 0 Z'</span><span class="token punctuation">;</span>
+
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 Z L 20 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 Z L 20 20'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 Z C 10 20 20 20 20 10'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 Z C 10 20 20 20 20 10'</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 Z Z'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 Z Z'</span><span class="token punctuation">;</span>
+
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 0 0'</span><span class="token punctuation">;</span> <span class="token comment">// empty string</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'X'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 0 0'</span><span class="token punctuation">;</span> <span class="token comment">// invalid command</span>
+
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 0 0'</span><span class="token punctuation">;</span> <span class="token comment">// no arguments for a command that needs them</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 0 0'</span><span class="token punctuation">;</span> <span class="token comment">// too few arguments</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'M 10 10 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10'</span><span class="token punctuation">;</span> <span class="token comment">// too many arguments</span>
+
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'X M 10 10'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10'</span><span class="token punctuation">;</span> <span class="token comment">// mixing invalid and valid commands</span>
+<span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">normalizePathData</span><span class="token punctuation">(</span><span class="token string">'X M 10 10 X L 20 20'</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'M 10 10 L 20 20'</span><span class="token punctuation">;</span> <span class="token comment">// invalid commands interspersed with valid commands</span></code></pre>
+
+        </div>
+    </div>
+    <div id="V.rectToPath" class="docs-item">
+        <a href="#V.rectToPath" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.rectToPath</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">rectToPath</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span></code></pre>
+        <p>Convert a rectangle <code class="highlighted">r</code> to SVG path commands. <code class="highlighted">r</code> is an object of the form <code class="highlighted"><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> width<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> top<span class="token operator">-</span>ry<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> top<span class="token operator">-</span>ry<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> bottom<span class="token operator">-</span>rx<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> bottom<span class="token operator">-</span>ry<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span> <span class="token punctuation">}</span></code> where <code class="highlighted">x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height</code> are the usual rectangle attributes and <code class="highlighted"><span class="token punctuation">[</span>top<span class="token operator">-</span><span class="token operator">/</span>bottom<span class="token operator">-</span><span class="token punctuation">]</span>rx<span class="token operator">/</span>ry</code> allows for specifying radius of the rectangle for all its sides (as opposed to the built-in SVG rectangle that has only <code class="highlighted">rx</code> and <code class="highlighted">ry</code> attributes).</p>
+        </div>
+    </div>
+    <div id="V.shiftAnnotations" class="docs-item">
+        <a href="#V.shiftAnnotations" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.shiftAnnotations</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">shiftAnnotations</span><span class="token punctuation">(</span>annotations<span class="token punctuation">,</span> index<span class="token punctuation">,</span> offset<span class="token punctuation">)</span></code></pre>
+        <p>Shift all the annotations (see <a href="#V.prototype.text">v.text()</a>) after character at <code class="highlighted">index</code> by <code class="highlighted">offset</code> positions.</p>
+
+        </div>
+    </div>
+    <div id="V.transformLine" class="docs-item">
+        <a href="#V.transformLine" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.transformLine</h3>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">transformLine</span><span class="token punctuation">(</span>line<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span></code></pre>
+<p>Transform a line by an SVG transformation represented by <code class="highlighted">matrix</code>.</p>
+<pre><code class="highlighted"><span class="token keyword">var</span> line <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">g<span class="token punctuation">.</span>Line</span><span class="token punctuation">(</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">200</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> rotatedLine <span class="token operator">=</span> <span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">transformLine</span><span class="token punctuation">(</span>line<span class="token punctuation">,</span> <span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">createSVGMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+        </div>
+    </div>
+    <div id="V.transformPoint" class="docs-item">
+        <a href="#V.transformPoint" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.transformPoint</h3>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">transformPoint</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span></code></pre>
+<p>Transform a point specified by <code class="highlighted">p</code> (an object with <code class="highlighted">x</code> and <code class="highlighted">y</code> coordinates) by an SVG transformation represented by <code class="highlighted">matrix</code>.
+  This is a convenient shortcut to calling:</p>
+<pre><code class="highlighted"><span class="token keyword">var</span> p <span class="token operator">=</span> mySVGDocument<span class="token punctuation">.</span><span class="token function">createSVGPoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+p<span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">matrixTransform</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span></code></pre>
+
+        </div>
+    </div>
+    <div id="V.transformPolyline" class="docs-item">
+        <a href="#V.transformPolyline" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.transformPolyline</h3>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">transformPolyline</span><span class="token punctuation">(</span>polyline<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span></code></pre>
+<p>Transform a polyline (or an array of points) by an SVG transformation represented by <code class="highlighted">matrix</code>.</p>
+<pre><code class="highlighted"><span class="token keyword">var</span> polyline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">g<span class="token punctuation">.</span>Polyline</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> rotatedPolyline <span class="token operator">=</span> <span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">transformPolyline</span><span class="token punctuation">(</span>polyline<span class="token punctuation">,</span> <span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">createSVGMatrix</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+        </div>
+    </div>
+    <div id="V.transformRect" class="docs-item">
+        <a href="#V.transformRect" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.transformRect</h3>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">transformRect</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span></code></pre>
+        <p>Transform a rectangle specified by <code class="highlighted">r</code> (an object with <code class="highlighted">x</code>, <code class="highlighted">y</code>, <code class="highlighted">width</code> and <code class="highlighted">height</code> properties) by an SVG transformation represented by <code class="highlighted">matrix</code>. This function is used internally in the <a href="#V.prototype.bbox">V.prototype.bbox</a> method to return a bounding box of an SVG element relative to another SVG parent element. However, this can be used elsewhere too, that's why it is publicly exposed. Whenever you need to transform a bounding box to a coordinate system of another element, use this function. To get the transformation <code class="highlighted">matrix</code> of the target element relative to which you want to tranform your rectangle, use e.g. the native SVG method: <code class="highlighted"><span class="token keyword">var</span> matrix <span class="token operator">=</span> svgSourceElement<span class="token punctuation">.</span><span class="token function">getTransformToElement</span><span class="token punctuation">(</span>svgTargetElement<span class="token punctuation">)</span></code>.</p>
+
+        </div>
+    </div>
+    <div id="V.transformStringToMatrix" class="docs-item">
+        <a href="#V.transformStringToMatrix" class="docs-item-anchor">
+            <h3 class="docs-item-header">V.transformStringToMatrix</h3>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted"><span class="token constant">V</span><span class="token punctuation">.</span><span class="token function">transformStringToMatrix</span><span class="token punctuation">(</span>transformString<span class="token punctuation">)</span></code></pre>
+<p>Return the <a href="https://developer.mozilla.org/en/docs/Web/API/SVGMatrix">SVG transformation matrix</a> built from the <code class="highlighted">transformString</code> E.g. <code class="highlighted"><span class="token string">'translate(10,10) scale(2,2)'</span></code> will result in matrix <code class="highlighted"><span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> c<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> d<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> e<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> f<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">}</span></code>.
+
+        </p></div>
+    </div>
+    <div id="V.prototype" class="docs-item">
+    <div id="V.prototype.addClass" class="docs-item">
+        <a href="#V.prototype.addClass" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.addClass</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">addClass</span><span class="token punctuation">(</span>className<span class="token punctuation">)</span></code></pre>
+        <p>Append <code class="highlighted">className</code> to the element <code class="highlighted"><span class="token keyword">class</span></code> attribute if it doesn't contain it already. Return the Vectorizer object for easy chaining.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.animateAlongPath" class="docs-item">
+        <a href="#V.prototype.animateAlongPath" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.animateAlongPath</h4>
+        </a>
+        <div class="docs-item-content">
+
+<pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">animateAlongPath</span><span class="token punctuation">(</span>attrs<span class="token punctuation">,</span> path<span class="token punctuation">)</span></code></pre>
+<p>Animate the element along the <code class="highlighted">path</code> SVG element (or Vectorizer object). <code class="highlighted">attrs</code> contain <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute#Animation_timing_attributes">Animation Timing attributes</a> describing the animation. The following example shows how to send a token along a JointJS link element:</p>
+<pre><code class="highlighted"><span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token constant">V</span><span class="token punctuation">(</span><span class="token string">'circle'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> r<span class="token punctuation">:</span> <span class="token number">8</span><span class="token punctuation">,</span> fill<span class="token punctuation">:</span> <span class="token string">'red'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">animateAlongPath</span><span class="token punctuation">(</span><span class="token punctuation">{</span> dur<span class="token punctuation">:</span> <span class="token string">'4s'</span><span class="token punctuation">,</span> repeatCount<span class="token punctuation">:</span> <span class="token string">'indefinite'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> paper<span class="token punctuation">.</span><span class="token function">findViewByModel</span><span class="token punctuation">(</span>myLink<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.connection'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token constant">V</span><span class="token punctuation">(</span>paper<span class="token punctuation">.</span>svg<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+        </div>
+    </div>
+    <div id="V.prototype.append" class="docs-item">
+        <a href="#V.prototype.append" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.append</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>els<span class="token punctuation">)</span></code></pre>
+        <p>Append another element (or elements) <code class="highlighted">els</code> as the last child of the element. <code class="highlighted">els</code> can be Vectorizer object(s) or SVG DOM element(s).</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.appendTo" class="docs-item">
+        <a href="#V.prototype.appendTo" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.appendTo</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">appendTo</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span></code></pre>
+        <p>Append <code class="highlighted">vel<span class="token punctuation">.</span>node</code> as a child to <code class="highlighted">node</code>.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.attr" class="docs-item">
+        <a href="#V.prototype.attr" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.attr</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> value<span class="token punctuation">)</span></code></pre>
+        <p>Set SVG attribute with <code class="highlighted">name</code> and <code class="highlighted">value</code> on the element. If <code class="highlighted">name</code> is an object of the form <code class="highlighted"><span class="token punctuation">{</span> <span class="token punctuation">[</span>name<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>value<span class="token punctuation">]</span> <span class="token punctuation">}</span></code>, more attributes will be set in one go.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.bbox" class="docs-item">
+        <a href="#V.prototype.bbox" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.bbox</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">bbox</span><span class="token punctuation">(</span><span class="token punctuation">[</span>withoutTransformations<span class="token punctuation">,</span> target<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the bounding box of the element after transformations are applied. If <code class="highlighted">withoutTransformations</code> is <code class="highlighted"><span class="token boolean">true</span></code>, transformations of the element will not be considered when computing the bounding box. If <code class="highlighted">target</code> is specified, bounding box will be computed relatively to the <code class="highlighted">target</code> element.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.before" class="docs-item">
+        <a href="#V.prototype.before" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.before</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">before</span><span class="token punctuation">(</span>els<span class="token punctuation">)</span></code></pre>
+        <p>Adds the given element (or elements) <code class="highlighted">els</code> before the Vectorizer element <code class="highlighted">vel</code> as a child of the parent node. <code class="highlighted">els</code> can be Vectorizer object(s) or SVG DOM element(s).</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.children" class="docs-item">
+        <a href="#V.prototype.children" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.children</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Returns an array of Vectorizer-wrapped children of this element's node.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.clone" class="docs-item">
+        <a href="#V.prototype.clone" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.clone</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Clone the Vectorizer object creating a brand new copy of the element. This clone is not automatically added to the DOM.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.contains" class="docs-item">
+        <a href="#V.prototype.contains" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.contains</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span></code></pre>
+        <p>Return <code class="highlighted"><span class="token boolean">true</span></code> if <code class="highlighted">vel<span class="token punctuation">.</span>node</code> is the parent/ancestor of <code class="highlighted">element</code> node in the DOM. Also, return <code class="highlighted"><span class="token boolean">true</span></code> if <code class="highlighted">vel<span class="token punctuation">.</span>node</code> is <code class="highlighted">element</code> node.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.convertToPath" class="docs-item">
+        <a href="#V.prototype.convertToPath" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.convertToPath</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">convertToPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Convert an SVG element to the SVG path element. It currently works for <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>line</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>polygon</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>polyline</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ellipse</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span><span class="token punctuation">></span></span></code> and <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span><span class="token punctuation">></span></span></code>.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.convertToPathData" class="docs-item">
+        <a href="#V.prototype.convertToPathData" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.convertToPathData</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">convertToPathData</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Convert an SVG element to the SVG path data (string of SVG path commands). It currently works for <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>line</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>polygon</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>polyline</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ellipse</span><span class="token punctuation">></span></span></code>, <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span><span class="token punctuation">></span></span></code> and <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span><span class="token punctuation">></span></span></code>.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.defs" class="docs-item">
+        <a href="#V.prototype.defs" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.defs</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">defs</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the Vectorizer object for the first <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>defs</span><span class="token punctuation">></span></span></code> element of the root SVG element. Note that the <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/defs"><code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>defs</span><span class="token punctuation">></span></span></code></a> element is a good place to put referenced SVG elements like gradients, clip paths, filters and others.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.empty" class="docs-item">
+        <a href="#V.prototype.empty" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.empty</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Removes all the child nodes from the Vectorizer element.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.find" class="docs-item">
+        <a href="#V.prototype.find" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.find</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span></code></pre>
+        <p>Return all elements wrapped in the Vectorizer object matching the <code class="highlighted">selector</code>.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.findIntersection" class="docs-item">
+        <a href="#V.prototype.findIntersection" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.findIntersection</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">findIntersection</span><span class="token punctuation">(</span>ref<span class="token punctuation">,</span> target<span class="token punctuation">)</span></code></pre>
+        <p> Find the intersection of a line starting in the center of the SVG node ending in the point <code class="highlighted">ref</code> (an object of the form <code class="highlighted"><span class="token punctuation">{</span> x<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> y<span class="token punctuation">:</span> Number <span class="token punctuation">}</span></code>). <code class="highlighted">target</code> is an SVG element to which this node's transformations are relative to. In JointJS, <code class="highlighted">target</code> is usually the <code class="highlighted">paper<span class="token punctuation">.</span>viewport</code> SVG group element. Note that <code class="highlighted">ref</code> point must be in the coordinate system of the <code class="highlighted">target</code> for this function to work properly. This function returns a point in the <code class="highlighted">target</code> coordinte system (the same system as <code class="highlighted">ref</code> is in) if an intersection is found. Returns <code class="highlighted">undefined</code> otherwise.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.findOne" class="docs-item">
+        <a href="#V.prototype.findOne" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.findOne</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">findOne</span><span class="token punctuation">(</span>selector<span class="token punctuation">)</span></code></pre>
+        <p>Return the first element wrapped in the Vectorizer object matching the <code class="highlighted">selector</code> Return <code class="highlighted">undefined</code> if not such element was found.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.findParentByClass" class="docs-item">
+        <a href="#V.prototype.findParentByClass" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.findParentByClass</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">findParentByClass</span><span class="token punctuation">(</span>className <span class="token punctuation">[</span><span class="token punctuation">,</span> terminator<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Traversing the DOM hierarchy outwards, up to optional <code class="highlighted">terminator</code> node (exclusive), find the first ancestor node that has the specified class. If no ancestor before terminator has <code class="highlighted">className</code>, return <code class="highlighted"><span class="token keyword">null</span></code>.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.getBBox" class="docs-item">
+        <a href="#V.prototype.getBBox" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.getBBox</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">getBBox</span><span class="token punctuation">(</span><span class="token punctuation">[</span>options<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the bounding box of the element after transformations are applied. Unlike vel.bbox(), this function fixes a browser implementation bug to return the correct bounding box if this elemenent is a group of svg elements (if options.recursive is specified). The <code class="highlighted">options</code> argument is optional. Two attributes may be provided inside the object. If <code class="highlighted">options<span class="token punctuation">.</span>target</code> is not undefined, bounding box will be computed relatively to the transformations of the <code class="highlighted">target</code> element; if it is undefined, the bounding box will be computed relatively to the element calling the function. If <code class="highlighted">options<span class="token punctuation">.</span>recursive</code> is true, the bounding box is computed as a union of all individual descendants' bounding boxes.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.getTransformToElement" class="docs-item">
+        <a href="#V.prototype.getTransformToElement" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.getTransformToElement</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">getTransformToElement</span><span class="token punctuation">(</span>toElement<span class="token punctuation">)</span></code></pre>
+        <p>Return an SVGMatrix that specifies the transformation necessary to convert vel coordinate system into toElement coordinate system.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.hasClass" class="docs-item">
+        <a href="#V.prototype.hasClass" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.hasClass</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">hasClass</span><span class="token punctuation">(</span>className<span class="token punctuation">)</span></code></pre>
+        <p>Return <code class="highlighted"><span class="token boolean">true</span></code> if the element contains <code class="highlighted">className</code> in its <code class="highlighted"><span class="token keyword">class</span></code> attribute. Return <code class="highlighted"><span class="token boolean">false</span></code> otherwise.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.id" class="docs-item">
+        <a href="#V.prototype.id" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.id</h4>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span>id</code></pre>
+<p>Element's unique identifier. A property of the element for getting/setting <code class="highlighted">vel<span class="token punctuation">.</span>node<span class="token punctuation">.</span>id</code>.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.index" class="docs-item">
+        <a href="#V.prototype.index" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.index</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the index of the SVG element amongst its siblings.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.normalizePath" class="docs-item">
+        <a href="#V.prototype.normalizePath" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.normalizePath</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">normalizePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Normalize this element's <code data-lang="html" class="highlighted">d</code> attribute. SVGPathElements without a path data attribute obtain a value of <code class="highlighted"><span class="token string">'M 0 0'</span></code>. If this element is not an SVGPathElement, there are no changes. Return <code class="highlighted"><span class="token keyword">this</span></code>, to allow easy chaining of V methods.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.prepend" class="docs-item">
+        <a href="#V.prototype.prepend" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.prepend</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">prepend</span><span class="token punctuation">(</span>els<span class="token punctuation">)</span></code></pre>
+        <p>Prepend another element (or elements) <code class="highlighted">els</code> as the first child of the element. <code class="highlighted">els</code> can be Vectorizer object(s) or SVG DOM element(s).</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.remove" class="docs-item">
+        <a href="#V.prototype.remove" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.remove</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Remove the element from the DOM.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.removeAttr" class="docs-item">
+        <a href="#V.prototype.removeAttr" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.removeAttr</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">removeAttr</span><span class="token punctuation">(</span>attribute<span class="token punctuation">)</span></code></pre>
+        <p>Remove the specified attribute from the <code class="highlighted">vel<span class="token punctuation">.</span>node</code>.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.removeClass" class="docs-item">
+        <a href="#V.prototype.removeClass" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.removeClass</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">removeClass</span><span class="token punctuation">(</span>className<span class="token punctuation">)</span></code></pre>
+        <p>Remove <code class="highlighted">className</code> from the element <code class="highlighted"><span class="token keyword">class</span></code> attribute if it contains it. Return the Vectorizer object for easy chaining.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.rotate" class="docs-item">
+        <a href="#V.prototype.rotate" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.rotate</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span>angle <span class="token punctuation">[</span><span class="token punctuation">,</span> cx<span class="token punctuation">,</span> cy<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Rotate the element by <code class="highlighted">angle</code> degrees. If the optional <code class="highlighted">cx</code> and <code class="highlighted">cy</code> coordinates are passed, they will be used as an origin for the rotation.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.sample" class="docs-item">
+        <a href="#V.prototype.sample" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.sample</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">sample</span><span class="token punctuation">(</span>interval<span class="token punctuation">)</span></code></pre>
+        <p>Sample the underlying SVG element (it currently works only on paths - where it is most useful anyway). Return an array of objects of the form <code class="highlighted"><span class="token punctuation">{</span> x<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> y<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> distance<span class="token punctuation">:</span> Number <span class="token punctuation">}</span></code>. Each of these objects represent a point on the path. This basically creates a discrete representation of the path (which is possible a curve). The sampling <code class="highlighted">interval</code> defines the accuracy of the sampling. In other words, we travel from the beginning of the path to the end by <code class="highlighted">interval</code> distance (on the path, not between the resulting points) and collect the discrete points on the path. This is very useful in many situations. For example, SVG does not provide a built-in mechanism to find intersections between two paths. Using sampling, we can just generate bunch of points for each of the path and find the closest ones from each set.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.scale" class="docs-item">
+        <a href="#V.prototype.scale" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.scale</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">scale</span><span class="token punctuation">(</span>sx <span class="token punctuation">[</span><span class="token punctuation">,</span> sy<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Scale the element by <code class="highlighted">sx</code> and <code class="highlighted">sy</code> factors. If <code class="highlighted">sy</code> is not passed, it will be considered the same as <code class="highlighted">sx</code>.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.setAttribute" class="docs-item">
+        <a href="#V.prototype.setAttribute" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.setAttribute</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> value<span class="token punctuation">)</span></code></pre>
+        <p>Assign <code class="highlighted">value</code> to the attribute with <code class="highlighted">name</code>. Attribute names can be namespaced; for example, <code data-lang="html" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span><span class="token punctuation">></span></span></code> elements have a <code class="highlighted">xlink<span class="token punctuation">:</span>href</code> attribute to set the source og the image.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.setAttributes" class="docs-item">
+        <a href="#V.prototype.setAttributes" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.setAttributes</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span>attributes<span class="token punctuation">)</span></code></pre>
+        <p>Take an <code class="highlighted">attributes</code> object with <code class="highlighted"><span class="token punctuation">{</span> attribute<span class="token punctuation">:</span> value <span class="token punctuation">}</span></code> pairs and assign them to vel.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.svg" class="docs-item">
+        <a href="#V.prototype.svg" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.svg</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">svg</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the Vectorizer object for the root SVG element of the element.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.tagName" class="docs-item">
+        <a href="#V.prototype.tagName" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.tagName</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">tagName</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+        <p>Return the tag name of this element, in uppercase.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.text" class="docs-item">
+        <a href="#V.prototype.text" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.text</h4>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span>content <span class="token punctuation">[</span><span class="token punctuation">,</span> opt<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<p>
+        Set the text <code class="highlighted">content</code> of the element.
+        This only makes sense for the <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span><span class="token punctuation">></span></span></code> element.
+        This method can deal with multi-line text in case the <code class="highlighted">content</code> string contains newline characters (<code class="highlighted">\n</code>).
+</p>
+
+<pre><code class="highlighted">t<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'my text'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+t<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'my multiline\ntext'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3>Alignment</h3>
+
+<p>
+        <code class="highlighted">opt<span class="token punctuation">.</span>lineHeight</code> can be optionally used to set the line height of the text.
+        It defaults to <code class="highlighted"><span class="token string">'1em'</span></code>. The <code class="highlighted">opt<span class="token punctuation">.</span>lineHeight</code> can also be set to <code class="highlighted"><span class="token string">'auto'</span></code> in which case it is left on Vectorizer to set the best possible line height.
+        This is useful if you annotate the text making it a rich-text (see below) and you don't want to set the line height to a fixed value for all the lines.
+</p>
+
+<p>
+        Use <code class="highlighted">opt<span class="token punctuation">.</span>textVerticalAnchor</code> to control the y-axis alignment relatively to the initial text position.
+        The anchor position can be set by a keyword or a value in <code class="highlighted">px</code> or <code class="highlighted">em</code>.
+        <ul>
+                <li><code class="highlighted"><span class="token string">'top'</span></code> - at the top of the text</li>
+                <li><code class="highlighted"><span class="token string">'bottom'</span></code> - at the bottom of the text</li>
+                <li><code class="highlighted"><span class="token string">'middle'</span></code> - in the middle of the text</li>
+                <li><code class="highlighted"><span class="token string">'0.3em'</span></code> - in the middle of the first line</li>
+                <li><code class="highlighted"><span class="token string">'0.8em'</span></code> - at the top edge of the first line <i>(default)</i></li>
+                <li><code class="highlighted"><span class="token string">'-0.3em'</span></code> - at the bottom edge of the first line</li>
+                <li><code class="highlighted"><span class="token number">0</span></code> or <code class="highlighted"><span class="token string">'0em'</span></code> - at the baseline of the first line</li>
+                <li><code class="highlighted"><span class="token number">20</span></code> or <code class="highlighted"><span class="token string">'20px'</span></code> - 20 pixels up from the baseline of the first line</li>
+        </ul>
+
+</p>
+<pre><code class="highlighted">t<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'my text\nwith custom line height'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  lineHeight<span class="token punctuation">:</span> <span class="token string">'2em'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+t<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'font-size'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'vertically aligned text'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  textVerticalAnchor<span class="token punctuation">:</span> <span class="token string">'middle'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>
+        <b>Note:</b> The method uses a heuristic algorithm to align the text.
+        To improve the results, define the text <code class="highlighted">font<span class="token operator">-</span>size</code> attribute in <code class="highlighted">px</code> and <code class="highlighted">lineHeight</code> option either in <code class="highlighted">px</code> or <code class="highlighted">em</code>.
+        If a keyword or annotations are used and no <code class="highlighted">font<span class="token operator">-</span>size</code> attribute is set on the text element, the font size defaults to <code class="highlighted"><span class="token number">16</span></code>.
+</p>
+
+<h3>Annotations</h3>
+
+<p>
+        If <code class="highlighted">opt<span class="token punctuation">.</span>annotations</code> array is set, the text will be annotated by the attributes defined in the annotations array.
+        This means that you can easily render rich text.
+        Each annotation in the annotations array is an object of the form <code class="highlighted"><span class="token punctuation">{</span> start<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> end<span class="token punctuation">:</span> Number<span class="token punctuation">,</span> attrs<span class="token punctuation">:</span> Object <span class="token punctuation">}</span></code> where <code class="highlighted">start</code> (inclusive) and <code class="highlighted">end</code> (exclusive) define the range of the text <code class="highlighted">content</code> where the <code class="highlighted">attrs</code> SVG Attributes will be applied.
+        If there are overlapping annotations, they will be  smartly merged (classes concatenated, attributes merged, <code class="highlighted">style</code> can be always defined either as a string or an object).
+</p>
+
+<pre><code class="highlighted"><span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token constant">V</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token number">250</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token number">150</span><span class="token punctuation">,</span> fill<span class="token punctuation">:</span> <span class="token string">'black'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+text<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'This is a rich text.\nThis text goes to multiple lines.'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  lineHeight<span class="token punctuation">:</span> <span class="token string">'auto'</span><span class="token punctuation">,</span>
+  annotations<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> start<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span> end<span class="token punctuation">:</span> <span class="token number">10</span><span class="token punctuation">,</span> attrs<span class="token punctuation">:</span> <span class="token punctuation">{</span> fill<span class="token punctuation">:</span> <span class="token string">'red'</span><span class="token punctuation">,</span> <span class="token string">'font-size'</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> rotate<span class="token punctuation">:</span> <span class="token string">'20'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> start<span class="token punctuation">:</span> <span class="token number">7</span><span class="token punctuation">,</span> end<span class="token punctuation">:</span> <span class="token number">15</span><span class="token punctuation">,</span> attrs<span class="token punctuation">:</span> <span class="token punctuation">{</span> fill<span class="token punctuation">:</span> <span class="token string">'blue'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> start<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> end<span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> attrs<span class="token punctuation">:</span> <span class="token punctuation">{</span> fill<span class="token punctuation">:</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token string">'text-link'</span><span class="token punctuation">,</span> style<span class="token punctuation">:</span> <span class="token string">'text-decoration: underline'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+svg<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>
+        If <code class="highlighted">opt<span class="token punctuation">.</span>includeAnnotationIndices</code> is set to <code class="highlighted"><span class="token boolean">true</span></code>, each <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tspan</span><span class="token punctuation">></span></span></code> will contain the <code class="highlighted"><span class="token string">'annotations'</span></code> attribute with comma-separated indices of annotations that apply to that piece of text.
+        Vectorizer provides some useful functions for working with annotations.
+        Those are <a href="#V.findAnnotationsAtIndex">V.findAnnotationsAtIndex()</a>, <a href="#V.findAnnotationsBetweenIndexes">V.findAnnotationsBetweenIndexes()</a> <a href="#V.shiftAnnotations">V.shiftAnnotations()</a> and <a href="#V.annotateString">V.annotateString()</a>.
+</p>
+
+
+<h3>Text Along Path</h3>
+
+<p>
+        To make the text go along a path, use <code class="highlighted">opt<span class="token punctuation">.</span>textPath</code>. It can be either string or an object.
+</p>
+
+<h4>string</h4>
+
+<p>
+        The provided <code class="highlighted">textPath</code> specifies the path data of the path the text should go along.
+</p>
+
+<pre><code class="highlighted">t<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'text that goes along a path'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> textPath<span class="token punctuation">:</span> <span class="token string">'M 0 100 Q 30 10 100 0'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>object
+
+<p>
+        The provided <code class="highlighted">textPath</code> can contain a <code class="highlighted">d</code> property that specifies the path data of the path the text should go along, and optionally other attributes that will be set on the automatically created <code data-lang="svg" class="highlighted"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textPath</span><span class="token punctuation">></span></span></code> SVG element, such as <code class="highlighted">startOffset</code>.
+        If <code class="highlighted">textPath</code> contains <code class="highlighted">xlink<span class="token punctuation">:</span>href</code> property, an existing path is used as reference.
+</p>
+
+<pre><code class="highlighted">t<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'another text that goes along a path'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  textPath<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    d<span class="token punctuation">:</span> <span class="token string">'M 0 100 Q 30 10 100 0'</span><span class="token punctuation">,</span>
+    startOffset<span class="token punctuation">:</span> <span class="token number">50</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+t<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'text that goes along an existing path'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  textPath<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token string">'xlink:href'</span><span class="token punctuation">:</span> <span class="token string">'#path1'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+        </div>
+    </div>
+    <div id="V.prototype.toGeometryShape" class="docs-item">
+        <a href="#V.prototype.toGeometryShape" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.toGeometryShape</h4>
+        </a>
+        <div class="docs-item-content">
+<pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">toGeometryShape</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>Convert the SVGElement to an equivalent geometric shape. The element's transformations are not taken into account.</p>
+<table>
+    <th>SVGElement</th><th>Shape</th>
+    <tr><td>SVGRectElement</td><td>g.Rect</td></tr>
+    <tr><td>SVGLineElement</td><td>g.Line</td></tr>
+    <tr><td>SVGCircleElement</td><td>g.Ellipse</td></tr>
+    <tr><td>SVGEllipseElement</td><td>g.Ellipse</td></tr>
+    <tr><td>SVGPolygonElement</td><td>g.Polyline</td></tr>
+    <tr><td>SVGPolylineElement</td><td>g.Polyline</td></tr>
+    <tr><td>SVGPathElement</td><td>g.Path</td></tr>
+    <tr><td><i>others</i></td><td>g.Rect</td></tr>
+</table>
+
+
+        </div>
+    </div>
+    <div id="V.prototype.toggleClass" class="docs-item">
+        <a href="#V.prototype.toggleClass" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.toggleClass</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">toggleClass</span><span class="token punctuation">(</span>className<span class="token punctuation">,</span> <span class="token keyword">switch</span><span class="token punctuation">)</span></code></pre>
+        <p>Add or remove <code class="highlighted">className</code> from the element <code class="highlighted"><span class="token keyword">class</span></code> attribute depending on either the class's presence or the value of the switch argument.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.toLocalPoint" class="docs-item">
+        <a href="#V.prototype.toLocalPoint" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.toLocalPoint</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">toLocalPoint</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span></code></pre>
+        <p>Convert a global point with coordinates <code class="highlighted">x</code> and <code class="highlighted">y</code> into the coordinate space of the element.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.transform" class="docs-item">
+        <a href="#V.prototype.transform" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.transform</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">transform</span><span class="token punctuation">(</span><span class="token punctuation">[</span>matrix<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>opt<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>When <code class="highlighted">matrix</code> is <b>not</b> provided, returns the current transformation matrix of the Vectorizer element.</p>
+        <p>When <code class="highlighted">matrix</code> is provided, applies the provided transformation matrix to the Vectorizer element.</p>
+        <p>You can clear previous transformations by passing <code class="highlighted">opt</code> with property <code class="highlighted">absolute<span class="token punctuation">:</span><span class="token boolean">true</span></code></p>
+
+        </div>
+    </div>
+    <div id="V.prototype.translate" class="docs-item">
+        <a href="#V.prototype.translate" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.translate</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">translate</span><span class="token punctuation">(</span>tx <span class="token punctuation">[</span><span class="token punctuation">,</span> ty<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+        <p>Translate the element by <code class="highlighted">tx</code> pixels in x axis and <code class="highlighted">ty</code> pixels in y axis. <code class="highlighted">ty</code> is optional in which case the translation in y axis is considered zero.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.translateAndAutoOrient" class="docs-item">
+        <a href="#V.prototype.translateAndAutoOrient" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.translateAndAutoOrient</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">translateAndAutoOrient</span><span class="token punctuation">(</span>position<span class="token punctuation">,</span> reference<span class="token punctuation">,</span> target<span class="token punctuation">)</span></code></pre>
+        <p>Auto-orient the element. This basically implements the <code class="highlighted">orient<span class="token operator">=</span>auto</code> attribute of <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/marker">markers</a>. The easiest way of understanding on what this does is to imagine the element is an arrowhead. Calling this method on the arrowhead makes it point to the <code class="highlighted">position</code> point while being auto-oriented (properly rotated) towards the <code class="highlighted">reference</code> point. <code class="highlighted">target</code> is the element relative to which the transformations are applied. Usually the root SVG element which is also default if not <code class="highlighted">target</code> is passed.</p>
+
+        </div>
+    </div>
+    <div id="V.prototype.translateCenterToPoint" class="docs-item">
+        <a href="#V.prototype.translateCenterToPoint" class="docs-item-anchor">
+            <h4 class="docs-item-header">V.prototype.translateCenterToPoint</h4>
+        </a>
+        <div class="docs-item-content">
+
+        <pre class="docs-method-signature"><code class="highlighted">vel<span class="token punctuation">.</span><span class="token function">translateCenterToPoint</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span></code></pre>
+        <p>Translate the element so that its new center will be at point <code class="highlighted">p</code>. <code class="highlighted">p</code> is an object of the form <code class="highlighted"><span class="token punctuation">{</span> x<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">,</span> y<span class="token punctuation">:</span> <span class="token punctuation">[</span>number<span class="token punctuation">]</span> <span class="token punctuation">}</span></code>.</p>
+
+        </div>
+    </div>
+    </div>
+    </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/api.js"></script>
+
+</body>
+</html>
