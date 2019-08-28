@@ -25,7 +25,7 @@ App.config = App.config || {};
                 group: 'undo-redo',
                 attrs: {
                     button: {
-                        'data-tooltip': 'Undo',
+                        'data-tooltip': '撤销',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -37,7 +37,7 @@ App.config = App.config || {};
                 group: 'undo-redo',
                 attrs: {
                     button: {
-                        'data-tooltip': 'Redo',
+                        'data-tooltip': '前进',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -50,7 +50,7 @@ App.config = App.config || {};
                 attrs: {
                     button: {
                         id: 'btn-clear',
-                        'data-tooltip': 'Clear Paper',
+                        'data-tooltip': '清空元素',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -60,11 +60,11 @@ App.config = App.config || {};
                 type: 'button',
                 name: 'svg',
                 group: 'export',
-                text: 'Export SVG',
+                text: '导出 SVG',
                 attrs: {
                     button: {
                         id: 'btn-svg',
-                        'data-tooltip': 'Open as SVG in a pop-up',
+                        'data-tooltip': '以SVG的方式，在弹出窗口中打开',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -74,11 +74,11 @@ App.config = App.config || {};
                 type: 'button',
                 name: 'png',
                 group: 'export',
-                text: 'Export PNG',
+                text: '导出 PNG',
                 attrs: {
                     button: {
                         id: 'btn-png',
-                        'data-tooltip': 'Open as PNG in a pop-up',
+                        'data-tooltip': '以PNG的方式，在弹出窗口中打开',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -91,13 +91,13 @@ App.config = App.config || {};
                 attrs: {
                     button: {
                         id: 'btn-print',
-                        'data-tooltip': 'Open a Print Dialog',
+                        'data-tooltip': '打印',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
                 }
             },
-            {
+            /* {
                 type: 'button',
                 name: 'to-front',
                 group: 'order',
@@ -124,6 +124,20 @@ App.config = App.config || {};
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
                 }
+            }, */
+            {
+                type: 'button',
+                name: 'save',
+                group: 'order',
+                text: '保存',
+                attrs: {
+                    button: {
+                        id: 'btn-to-save',
+                        'data-tooltip': '保存',
+                        'data-tooltip-position': 'top',
+                        'data-tooltip-position-selector': '.toolbar-container'
+                    }
+                }
             },
             {
                 type: 'button',
@@ -132,7 +146,7 @@ App.config = App.config || {};
                 attrs: {
                     button: {
                         id: 'btn-layout',
-                        'data-tooltip': 'Auto-layout Graph',
+                        'data-tooltip': '自动调整布局大小',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -144,7 +158,7 @@ App.config = App.config || {};
                 group: 'zoom',
                 attrs: {
                     button: {
-                        'data-tooltip': 'Zoom To Fit',
+                        'data-tooltip': '居中',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -156,7 +170,7 @@ App.config = App.config || {};
                 group: 'zoom',
                 attrs: {
                     button: {
-                        'data-tooltip': 'Zoom Out',
+                        'data-tooltip': '放大',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -166,7 +180,7 @@ App.config = App.config || {};
                 type: 'label',
                 name: 'zoom-slider-label',
                 group: 'zoom',
-                text: 'Zoom:'
+                text: '缩放:'
             },
             {
                 type: 'zoom-slider',
@@ -179,7 +193,7 @@ App.config = App.config || {};
                 group: 'zoom',
                 attrs: {
                     button: {
-                        'data-tooltip': 'Zoom In',
+                        'data-tooltip': '缩小',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -193,10 +207,10 @@ App.config = App.config || {};
                 type: 'label',
                 name: 'grid-size-label',
                 group: 'grid',
-                text: 'Grid size:',
+                text: '网格大小:',
                 attrs: {
                     label: {
-                        'data-tooltip': 'Change Grid Size',
+                        'data-tooltip': '调整网格大小',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
@@ -216,7 +230,7 @@ App.config = App.config || {};
                 type: 'separator',
                 group: 'snapline'
             },
-            {
+            /* {
                 type: 'checkbox',
                 name: 'snapline',
                 group: 'snapline',
@@ -227,19 +241,19 @@ App.config = App.config || {};
                         id: 'snapline-switch'
                     },
                     label: {
-                        'data-tooltip': 'Enable/Disable Snaplines',
+                        'data-tooltip': '启用/禁用 对齐线',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }
                 }
-            },
+            }, */
             {
                 type: 'fullscreen',
                 name: 'fullscreen',
                 group: 'fullscreen',
                 attrs: {
                     button: {
-                        'data-tooltip': 'Toggle Fullscreen Mode',
+                        'data-tooltip': '切换全屏模式',
                         'data-tooltip-position': 'top',
                         'data-tooltip-position-selector': '.toolbar-container'
                     }

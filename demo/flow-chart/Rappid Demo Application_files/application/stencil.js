@@ -8,10 +8,10 @@ App.config = App.config || {};
     App.config.stencil = {};
 
     App.config.stencil.groups = {
-        standard: { index: 1, label: 'Standard shapes' },
-        fsa: { index: 2, label: 'State machine' },
-        pn: { index: 3, label: 'Petri nets' },
-        erd: { index: 4, label: 'Entity-relationship' },
+        standard: { index: 1, label: '标准形状' },
+        fsa: { index: 2, label: '状态机' },
+        pn: { index: 3, label: 'Petri网' },
+        erd: { index: 4, label: 'ER图' },
         uml: { index: 5, label: 'UML' },
         org: { index: 6, label: 'ORG' }
     };

@@ -224,7 +224,7 @@ var App = window.App || {};
         initializeToolsAndInspector: function() {
 
             this.paper.on({
-
+                // 绑定事件操作：元素的点击、线的点击、浮动到线上、离开浮动到线上
                 'element:pointerup': function(elementView) {
 
                     var element = elementView.model;
@@ -237,7 +237,7 @@ var App = window.App || {};
                         preserveAspectRatio: !!element.get('preserveAspectRatio'),
                         allowOrthogonalResize: element.get('allowOrthogonalResize') !== false
                     }).render();
-
+                    
                     new joint.ui.Halo({
                         cellView: elementView,
                         handles: App.config.halo.handles
@@ -364,20 +364,22 @@ var App = window.App || {};
             toolbar.on({
                 'svg:pointerclick': this.openAsSVG.bind(this),
                 'png:pointerclick': this.openAsPNG.bind(this),
-                'to-front:pointerclick': this.applyOnSelection.bind(this, 'toFront'),
-                'to-back:pointerclick': this.applyOnSelection.bind(this, 'toBack'),
+                // 'to-front:pointerclick': this.applyOnSelection.bind(this, 'toFront'),
+                // 'to-back:pointerclick': this.applyOnSelection.bind(this, 'toBack'),
                 'layout:pointerclick': this.layoutDirectedGraph.bind(this),
-                'snapline:change': this.changeSnapLines.bind(this),
+                // 'snapline:change': this.changeSnapLines.bind(this),
                 'clear:pointerclick': this.graph.clear.bind(this.graph),
                 'print:pointerclick': this.paper.print.bind(this.paper),
-                'grid-size:change': this.paper.setGridSize.bind(this.paper)
+                'grid-size:change': this.paper.setGridSize.bind(this.paper),
+                'save:pointerclick': this.save.bind(this)
             });
 
             this.$('.toolbar-container').append(toolbar.el);
             toolbar.render();
         },
-
+        
         applyOnSelection: function(method) {
+            // 不懂这个方法是干嘛的
             this.graph.startBatch('selection');
             this.selection.collection.models.forEach(function(model) { model[method](); });
             this.graph.stopBatch('selection');
@@ -460,6 +462,36 @@ var App = window.App || {};
             });
 
             this.paperScroller.centerContent();
+        },
+        // 下面这些是新增的
+        save: function() {
+            // 这里来保存数据
+            // alert("数据已经保存");
+            var graph = this.graph;
+            console.info(JSON.stringify(graph.toJSON()));
+            // graph.toJSON()  获取全部数据
+            // 
+
+            /* $.ajax({
+                url: configMap.base + configMap.dataUrl,
+                type: "GET",
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data),
+                success: function () {
+                    App.unblockUI(jqueryMap.$blockTarget);
+                    Messenger().post({
+                        message: "保存成功"
+                    });
+                },
+                error: function (result) {
+                    App.unblockUI(jqueryMap.$blockTarget);
+                    var errorData = jQuery.parseJSON(result.responseText);
+                    Messenger().post({
+                        message: errorData.errMsg,
+                        type: 'warning'
+                    });
+                }
+            }); */
         }
     });
 

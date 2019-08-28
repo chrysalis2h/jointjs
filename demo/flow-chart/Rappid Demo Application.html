@@ -19,80 +19,9 @@
     <div id="app" class="joint-app joint-theme-modern">
         <div class="app-header">
             <div class="app-title">
-                <h1>Rappid</h1>
+                <h1>流程图</h1>
             </div>
             <div class="toolbar-container">
-                <!-- <div class="joint-toolbar joint-theme-modern">
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="undo-redo"><button
-                            class="joint-widget joint-theme-modern" data-tooltip="Undo" data-tooltip-position="top"
-                            data-tooltip-position-selector=".toolbar-container" data-type="undo"
-                            data-name="undo"></button><button class="joint-widget joint-theme-modern"
-                            data-tooltip="Redo" data-tooltip-position="top"
-                            data-tooltip-position-selector=".toolbar-container" data-type="redo"
-                            data-name="redo"></button></div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="clear"><button
-                            class="joint-widget joint-theme-modern" id="btn-clear" data-tooltip="Clear Paper"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="button" data-name="clear"></button></div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="export"><button
-                            class="joint-widget joint-theme-modern" id="btn-svg" data-tooltip="Open as SVG in a pop-up"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="button" data-name="svg">Export SVG</button><button
-                            class="joint-widget joint-theme-modern" id="btn-png" data-tooltip="Open as PNG in a pop-up"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="button" data-name="png">Export PNG</button></div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="print"><button
-                            class="joint-widget joint-theme-modern" id="btn-print" data-tooltip="Open a Print Dialog"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="button" data-name="print"></button></div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="fullscreen"><button
-                            class="joint-widget joint-theme-modern" data-tooltip="Toggle Fullscreen Mode"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="fullscreen" data-name="fullscreen"></button></div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="order"><button
-                            class="joint-widget joint-theme-modern" id="btn-to-front"
-                            data-tooltip="Bring Object to Front" data-tooltip-position="top"
-                            data-tooltip-position-selector=".toolbar-container" data-type="button"
-                            data-name="to-front">Send To Front</button><button class="joint-widget joint-theme-modern"
-                            id="btn-to-back" data-tooltip="Send Object to Back" data-tooltip-position="top"
-                            data-tooltip-position-selector=".toolbar-container" data-type="button"
-                            data-name="to-back">Send To Back</button></div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="layout"><button
-                            class="joint-widget joint-theme-modern" id="btn-layout" data-tooltip="Auto-layout Graph"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="button" data-name="layout"></button></div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="zoom"><button
-                            class="joint-widget joint-theme-modern" data-tooltip="Zoom To Fit"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="zoomToFit" data-name="zoom-to-fit"></button><button
-                            class="joint-widget joint-theme-modern" data-tooltip="Zoom Out" data-tooltip-position="top"
-                            data-tooltip-position-selector=".toolbar-container" data-type="zoomOut"
-                            data-name="zoom-out"></button><label class="joint-widget joint-theme-modern"
-                            data-type="label" data-name="zoom-slider-label">Zoom:</label>
-                        <div class="joint-widget joint-theme-modern" data-type="zoomSlider" data-name="zoom-slider">
-                            <input type="range" name="zoom-slider" min="20" max="500" step="20"
-                                class="input"><output>100</output><span class="units"> %</span></div><button
-                            class="joint-widget joint-theme-modern" data-tooltip="Zoom In" data-tooltip-position="top"
-                            data-tooltip-position-selector=".toolbar-container" data-type="zoomIn"
-                            data-name="zoom-in"></button>
-                    </div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="grid">
-                        <div class="joint-widget joint-theme-modern" data-type="separator"></div><label
-                            class="joint-widget joint-theme-modern" data-tooltip="Change Grid Size"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="label" data-name="grid-size-label">Grid size:</label>
-                        <div class="joint-widget joint-theme-modern" data-type="range" data-name="grid-size"><input
-                                type="range" name="range" min="1" max="50" step="1"
-                                class="input"><output>10</output><span class="units"></span></div>
-                    </div>
-                    <div class="joint-toolbar-group joint-theme-modern" data-group="snapline">
-                        <div class="joint-widget joint-theme-modern" data-type="separator"></div><label
-                            class="joint-widget joint-theme-modern" data-tooltip="Enable/Disable Snaplines"
-                            data-tooltip-position="top" data-tooltip-position-selector=".toolbar-container"
-                            data-type="checkbox" data-name="snapline"><span>Snaplines:</span><input type="checkbox"
-                                class="input" id="snapline-switch"><span></span></label>
-                    </div>
-                </div> -->
             </div>
         </div>
         <div class="app-body">
@@ -100,8 +29,8 @@
             <!-- 元素开始 -->
             <div class="stencil-container">
                 <div class="joint-stencil joint-theme-modern searchable collapsible">
-                    <div class="groups-toggle"><label class="group-label">Stencil</label><button
-                            class="btn btn-expand">+</button><button class="btn btn-collapse">-</button></div>
+                    <div class="groups-toggle"><label class="group-label">元素</label><button class="btn btn-expand">+</button><button
+                            class="btn btn-collapse">-</button></div>
                     <div class="search-wrap"><input type="search" placeholder="search" class="search"></div>
                     <div class="stencil-paper-drag joint-paper joint-theme-modern" style="width: 1px; height: 1px;">
                         <div class="joint-paper-background" joint-selector="background"></div>
@@ -177,12 +106,17 @@
         </script>
     <![endif]-->
     <!-- Application files:  -->
+    <!-- 每个元素上面的操作 -->
     <script src="./Rappid Demo Application_files/application/halo.js"></script>
+    <!-- 元素按住ctrl后多选之后进行的操作 -->
     <script src="./Rappid Demo Application_files/application/selection.js"></script>
+    <!-- 右侧属性编辑 -->
     <script src="./Rappid Demo Application_files/application/inspector.js"></script>
-    <!-- 所有的形状在下面这个文件里面 -->
+    <!-- 左侧所有的形状在下面这个文件里面 -->
     <script src="./Rappid Demo Application_files/application/stencil.js"></script>
+    <!-- 顶部操作按钮 -->
     <script src="./Rappid Demo Application_files/application/toolbar.js"></script>
+    <!-- 中部示例数据 -->
     <script src="./Rappid Demo Application_files/application/sample-graphs.js"></script>
     <!-- 主要的js方法在这个里面 -->
     <script src="./Rappid Demo Application_files/application/main.js"></script>
@@ -196,6 +130,18 @@
         themePicker.render().$el.appendTo(document.body);
         window.addEventListener('load', function () {
             app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+            /* var configMap = App.config.configMap;
+            $.ajax({
+                url: configMap.base + configMap.dataUrl,
+                type: "GET",
+                contentType: 'application/json; charset=utf-8',
+                success: function () {
+                    app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+                },
+                error: function (result) {
+                    alert("数据初始化失败");
+                }
+            }); */
         });
     </script>
     <div class="joint-toolbar joint-theme-picker joint-theme-modern">
@@ -203,32 +149,10 @@
             <div class="joint-widget joint-theme-modern" data-type="selectButtonGroup" data-name="theme-picker">
                 <div class="joint-select-button-group joint-theme-modern" data-tooltip="Change Theme"
                     data-tooltip-position="bottom">
-                    <!-- <div class="select-button-group-button selected">Modern</div>
-                    <div class="select-button-group-button">Dark</div>
-                    <div class="select-button-group-button">Material</div> -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- Local file warning: -->
-    <!-- <div id="message-fs" style="display: none;">
-        <p>The application was open locally using the file protocol. It is recommended to access it trough a <b>Web server</b>.</p>
-        <p>Please see <a href="https://resources.jointjs.com/demos/rappid/apps/KitchenSink/README.md">instructions</a>.</p>
-    </div>
-    <script>
-    (function() {
-        var fs = (document.location.protocol === 'file:');
-        var ff = (navigator.userAgent.toLowerCase().indexOf('firefox') !== -1);
-        if (fs && !ff) {
-            (new joint.ui.Dialog({
-                width: 300,
-                type: 'alert',
-                title: 'Local File',
-                content: $('#message-fs').show()
-            })).open();
-        }
-    })();
-    </script> -->
 </body>
 
 </html>

@@ -16,7 +16,7 @@ App.config = App.config || {};
             attrs: {
                 '.handle': {
                     'data-tooltip-class-name': 'small',
-                    'data-tooltip': 'Click to remove the selected elements',
+                    'data-tooltip': '点击后，删除选中的元素',
                     'data-tooltip-position': 'right',
                     'data-tooltip-padding': 15
                 }
@@ -33,7 +33,7 @@ App.config = App.config || {};
             attrs: {
                 '.handle': {
                     'data-tooltip-class-name': 'small',
-                    'data-tooltip': 'Click and drag to rotate the selected elements',
+                    'data-tooltip': '点击后，拖动来对选中的元素进行旋转操作',
                     'data-tooltip-position': 'right',
                     'data-tooltip-padding': 15
                 }
@@ -50,7 +50,7 @@ App.config = App.config || {};
             attrs: {
                 '.handle': {
                     'data-tooltip-class-name': 'small',
-                    'data-tooltip': 'Click and drag to resize the selected elements',
+                    'data-tooltip': '点击后，拖动来调整选中元素的大小',
                     'data-tooltip-position': 'left',
                     'data-tooltip-padding': 15
                 }

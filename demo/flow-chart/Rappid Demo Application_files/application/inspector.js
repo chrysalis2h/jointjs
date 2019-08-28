@@ -47,8 +47,8 @@ App.config = App.config || {};
 
         fontWeight: [
             { value: '300', content: '<span style="font-weight: 300">Light</span>' },
-            { value: 'Normal', content: '<span style="font-weight: Normal">Normal</span>' },
-            { value: 'Bold', content: '<span style="font-weight: Bolder">Bold</span>' }
+            { value: '正常', content: '<span style="font-weight: Normal">Normal</span>' },
+            { value: '加粗', content: '<span style="font-weight: Bolder">Bold</span>' }
         ],
 
         fontFamily: [
@@ -58,9 +58,9 @@ App.config = App.config || {};
         ],
 
         strokeStyle: [
-            { value: '0', content: 'Solid' },
-            { value: '2,5', content: 'Dotted' },
-            { value: '10,5', content: 'Dashed' }
+            { value: '0', content: '线' },
+            { value: '2,5', content: '点' },
+            { value: '10,5', content: '虚线' }
         ],
 
         side: [
@@ -169,7 +169,7 @@ App.config = App.config || {};
                             type: 'select-button-group',
                             options: options.strokeWidth,
                             group: 'connection',
-                            label: 'Link thickness',
+                            label: '连线粗细',
                             when: { ne: { 'attrs/line/stroke': 'transparent' }},
                             index: 4
                         },
@@ -177,7 +177,7 @@ App.config = App.config || {};
                             type: 'select-box',
                             options: options.strokeStyle,
                             group: 'connection',
-                            label: 'Link style',
+                            label: '连线样式',
                             when: { ne: { 'attrs/line/stroke': 'transparent' }},
                             index: 5
                         },
@@ -185,7 +185,7 @@ App.config = App.config || {};
                             type: 'color-palette',
                             options: options.colorPalette,
                             group: 'connection',
-                            label: 'Color',
+                            label: '颜色',
                             index: 6
                         },
                         sourceMarker: {
@@ -193,14 +193,14 @@ App.config = App.config || {};
                                 type: 'select-box',
                                 options: options.arrowheadSize,
                                 group: 'marker-source',
-                                label: 'Source arrowhead',
+                                label: '线起始箭头大小',
                                 index: 1
                             },
                             fill: {
                                 type: 'color-palette',
                                 options: options.colorPaletteReset,
                                 group: 'marker-source',
-                                label: 'Color',
+                                label: '颜色',
                                 when: { ne: { 'attrs/line/sourceMarker/d': 'M 0 0 0 0' }},
                                 index: 2
                             }
@@ -210,14 +210,14 @@ App.config = App.config || {};
                                 type: 'select-box',
                                 options: options.arrowheadSize,
                                 group: 'marker-target',
-                                label: 'Target arrowhead',
+                                label: '线目标箭头大小',
                                 index: 1
                             },
                             fill: {
                                 type: 'color-palette',
                                 options: options.colorPaletteReset,
                                 group: 'marker-target',
-                                label: 'Color',
+                                label: '颜色',
                                 when: { ne: { 'attrs/line/targetMarker/d': 'M 0 0 0 0' }},
                                 index: 2
                             }
@@ -229,7 +229,7 @@ App.config = App.config || {};
                         type: 'select-button-group',
                         options: options.router,
                         group: 'connection',
-                        label: 'Connection type',
+                        label: '连接类型',
                         index: 1
                     },
                     args: {
@@ -249,14 +249,14 @@ App.config = App.config || {};
                         type: 'select-button-group',
                         options: options.connector,
                         group: 'connection',
-                        label: 'Connection style',
+                        label: '连接样式',
                         index: 3
                     }
                 },
                 labels: {
                     type: 'list',
                     group: 'labels',
-                    label: 'Labels',
+                    label: '标签',
                     attrs: {
                         label: {
                             'data-tooltip': 'Set (possibly multiple) labels for the link',
@@ -271,7 +271,7 @@ App.config = App.config || {};
                                 text: {
                                     text: {
                                         type: 'content-editable',
-                                        label: 'text',
+                                        label: '文本',
                                         defaultValue: 'label',
                                         index: 1,
                                         attrs: {
@@ -285,7 +285,7 @@ App.config = App.config || {};
                                     fill: {
                                         type: 'color-palette',
                                         options: options.colorPaletteReset,
-                                        label: 'Text Color',
+                                        label: '文本颜色',
                                         index: 5
                                     }
                                 },
@@ -293,13 +293,13 @@ App.config = App.config || {};
                                     fill: {
                                         type: 'color-palette',
                                         options: options.colorPaletteReset,
-                                        label: 'Fill',
+                                        label: '填充',
                                         index: 3
                                     },
                                     stroke: {
                                         type: 'color-palette',
                                         options: options.colorPaletteReset,
-                                        label: 'Outline',
+                                        label: '外边框',
                                         index: 4
                                     }
                                 }
@@ -308,7 +308,7 @@ App.config = App.config || {};
                                 type: 'select-box',
                                 options: options.labelPosition || [],
                                 defaultValue: 0.5,
-                                label: 'Position',
+                                label: '位置',
                                 placeholder: 'Custom',
                                 index: 2,
                                 attrs: {
@@ -325,19 +325,19 @@ App.config = App.config || {};
             },
             groups: {
                 connection: {
-                    label: 'Connection',
+                    label: '连接',
                     index: 1
                 },
                 'marker-source': {
-                    label: 'Source marker',
+                    label: '起始标记',
                     index: 2
                 },
                 'marker-target': {
-                    label: 'Target marker',
+                    label: '目标标记',
                     index: 3
                 },
                 labels: {
-                    label: 'Labels',
+                    label: '标签',
                     index: 4
                 }
             }
@@ -348,7 +348,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -357,7 +357,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -365,7 +365,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -373,7 +373,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -381,7 +381,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -391,14 +391,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -409,7 +409,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -417,7 +417,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -432,11 +432,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -447,7 +447,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -456,7 +456,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -464,7 +464,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -472,7 +472,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -480,7 +480,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -490,14 +490,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -508,7 +508,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -516,7 +516,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -531,11 +531,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -546,7 +546,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -555,7 +555,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -563,7 +563,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -571,7 +571,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -579,7 +579,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -589,14 +589,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -607,7 +607,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -615,7 +615,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -630,11 +630,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -645,7 +645,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -654,7 +654,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -662,7 +662,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -670,7 +670,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -678,7 +678,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -688,14 +688,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -706,7 +706,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -714,7 +714,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -729,14 +729,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'top',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'top',
                             index: 2
                         },
@@ -747,7 +747,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'top',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -755,7 +755,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'top',
                             when: {
                                 and: [
@@ -770,7 +770,7 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 top: {
@@ -778,7 +778,7 @@ App.config = App.config || {};
                     index: 2
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 3
                 }
             }
@@ -789,7 +789,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -798,7 +798,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -806,7 +806,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -814,7 +814,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -822,7 +822,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -841,11 +841,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -856,7 +856,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -865,7 +865,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -873,7 +873,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -881,7 +881,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -889,7 +889,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -908,7 +908,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 2
                         }
@@ -917,7 +917,7 @@ App.config = App.config || {};
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 3
                         },
@@ -928,7 +928,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/border/stroke': 'transparent' }},
                             index: 4
@@ -938,11 +938,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -953,7 +953,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -962,7 +962,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -970,7 +970,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -978,7 +978,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -986,7 +986,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -996,14 +996,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -1014,7 +1014,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -1022,7 +1022,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -1050,11 +1050,11 @@ App.config = App.config || {};
                     index: 1
                 },
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 2
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 3
                 }
             }
@@ -1076,7 +1076,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/bodyText/text': '' }},
                             index: 2
@@ -1084,7 +1084,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/bodyText/text': '' }},
                             index: 3
@@ -1092,7 +1092,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/bodyText/text': '' }},
                             index: 4
@@ -1100,7 +1100,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/boduText/text': '' }},
                             index: 5
@@ -1109,7 +1109,7 @@ App.config = App.config || {};
                     headerText: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'headerText',
                             index: 1
                         },
@@ -1118,7 +1118,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'headerText',
                             when: { ne: { 'attrs/headerText/text': '' }},
                             index: 2
@@ -1126,7 +1126,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'headerText',
                             when: { ne: { 'attrs/headerText/text': '' }},
                             index: 3
@@ -1134,7 +1134,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'headerText',
                             when: { ne: { 'attrs/headerText/text': '' }},
                             index: 4
@@ -1142,7 +1142,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'headerText',
                             when: { ne: { 'attrs/headerText/text': '' }},
                             index: 5
@@ -1152,14 +1152,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -1170,7 +1170,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -1178,7 +1178,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -1193,14 +1193,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'header',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'header',
                             index: 2
                         },
@@ -1211,7 +1211,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'header',
                             when: { ne: { 'attrs/header/stroke': 'transparent' }},
                             index: 3
@@ -1219,7 +1219,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'header',
                             when: {
                                 and: [
@@ -1234,11 +1234,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 },
                 header: {
@@ -1257,7 +1257,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -1266,7 +1266,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -1274,7 +1274,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -1282,7 +1282,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -1290,7 +1290,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -1300,14 +1300,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -1318,7 +1318,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -1326,7 +1326,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -1378,7 +1378,7 @@ App.config = App.config || {};
                                     fill: {
                                         type: 'color-palette',
                                         options: options.colorPalette,
-                                        label: 'Fill',
+                                        label: '填充',
                                         when: { not: { equal: { inPorts: [] }}},
                                         group: 'inPorts',
                                         index: 1
@@ -1420,7 +1420,7 @@ App.config = App.config || {};
                                     fill: {
                                         type: 'color-palette',
                                         options: options.colorPalette,
-                                        label: 'Fill',
+                                        label: '填充',
                                         when: { not: { equal: { outPorts: [] }}},
                                         group: 'outPorts',
                                         index: 2
@@ -1473,11 +1473,11 @@ App.config = App.config || {};
                     index: 3
                 },
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 4
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 5
                 }
             }
@@ -1488,7 +1488,7 @@ App.config = App.config || {};
                     label: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -1497,7 +1497,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 2
@@ -1505,7 +1505,7 @@ App.config = App.config || {};
                         fontFamily: {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 3
@@ -1513,7 +1513,7 @@ App.config = App.config || {};
                         fontWeight: {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 4
@@ -1521,7 +1521,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/label/text': '' }},
                             index: 5
@@ -1531,14 +1531,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -1549,7 +1549,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/body/stroke': 'transparent' }},
                             index: 3
@@ -1557,7 +1557,7 @@ App.config = App.config || {};
                         strokeDasharray: {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -1609,7 +1609,7 @@ App.config = App.config || {};
                                     fill: {
                                         type: 'color-palette',
                                         options: options.colorPalette,
-                                        label: 'Fill',
+                                        label: '填充',
                                         when: { not: { equal: { 'ports/items': [] }}},
                                         group: 'inPorts',
                                         index: 1
@@ -1659,7 +1659,7 @@ App.config = App.config || {};
                                     fill: {
                                         type: 'color-palette',
                                         options: options.colorPalette,
-                                        label: 'Fill',
+                                        label: '填充',
                                         when: { not: { equal: { 'ports/items': [] }}},
                                         group: 'outPorts',
                                         index: 2
@@ -1720,11 +1720,11 @@ App.config = App.config || {};
                     index: 3
                 },
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 4
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 5
                 }
             }
@@ -1736,7 +1736,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         }
@@ -1745,7 +1745,7 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 }
             }
@@ -1757,21 +1757,21 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 3
                         },
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -1795,11 +1795,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -1810,7 +1810,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -1819,7 +1819,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -1827,7 +1827,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -1835,7 +1835,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -1843,7 +1843,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -1853,14 +1853,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -1871,7 +1871,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/circle/stroke': 'transparent' }},
                             index: 3
@@ -1879,7 +1879,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -1894,11 +1894,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -1909,7 +1909,7 @@ App.config = App.config || {};
                     '.label': {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -1918,7 +1918,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/.label/text': '' }},
                             index: 2
@@ -1926,7 +1926,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/.label/text': '' }},
                             index: 3
@@ -1934,7 +1934,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/.label/text': '' }},
                             index: 4
@@ -1942,7 +1942,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/.label/text': '' }},
                             index: 5
@@ -1952,14 +1952,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -1970,7 +1970,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/.root/stroke': 'transparent' }},
                             index: 3
@@ -1978,7 +1978,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -2000,11 +2000,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 2
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 3
                 },
                 data: {
@@ -2019,7 +2019,7 @@ App.config = App.config || {};
                     '.label': {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2028,7 +2028,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/.label/text': '' }},
                             index: 2
@@ -2036,7 +2036,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/.label/text': '' }},
                             index: 3
@@ -2044,7 +2044,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/.label/text': '' }},
                             index: 4
@@ -2052,7 +2052,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/.label/text': '' }},
                             index: 5
@@ -2062,14 +2062,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -2080,7 +2080,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/rect/stroke': 'transparent' }},
                             index: 2
@@ -2088,7 +2088,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -2103,11 +2103,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -2118,7 +2118,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2127,7 +2127,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -2135,7 +2135,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -2143,7 +2143,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -2151,7 +2151,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -2161,14 +2161,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -2179,7 +2179,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/.outer/stroke': 'transparent' }},
                             index: 3
@@ -2187,7 +2187,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -2202,11 +2202,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -2217,7 +2217,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2226,7 +2226,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -2234,7 +2234,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -2242,7 +2242,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -2250,7 +2250,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -2260,14 +2260,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'outer',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'outer',
                             index: 2
                         },
@@ -2278,7 +2278,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'outer',
                             when: { ne: { 'attrs/.outer/stroke': 'transparent' }},
                             index: 3
@@ -2286,7 +2286,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'outer',
                             when: {
                                 and: [
@@ -2301,14 +2301,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'inner',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'inner',
                             index: 2
                         },
@@ -2319,7 +2319,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'inner',
                             when: { ne: { 'attrs/.inner/stroke': 'transparent' }},
                             index: 3
@@ -2327,7 +2327,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'inner',
                             when: {
                                 and: [
@@ -2342,7 +2342,7 @@ App.config = App.config || {};
             },
             groups: {
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 1
                 },
                 outer: {
@@ -2361,7 +2361,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2370,7 +2370,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -2378,7 +2378,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -2386,7 +2386,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -2394,7 +2394,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -2404,14 +2404,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -2422,7 +2422,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/.outer/stroke': 'transparent' }},
                             index: 3
@@ -2430,7 +2430,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -2445,11 +2445,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -2460,7 +2460,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2469,7 +2469,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -2477,7 +2477,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -2485,7 +2485,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -2493,7 +2493,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -2503,14 +2503,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'outer',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'outer',
                             index: 2
                         },
@@ -2521,7 +2521,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'outer',
                             when: { ne: { 'attrs/.outer/stroke': 'transparent' }},
                             index: 3
@@ -2529,7 +2529,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'outer',
                             when: {
                                 and: [
@@ -2544,14 +2544,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'inner',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'inner',
                             index: 2
                         },
@@ -2562,7 +2562,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'inner',
                             when: { ne: { 'attrs/.inner/stroke': 'transparent' }},
                             index: 3
@@ -2570,7 +2570,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'inner',
                             when: {
                                 and: [
@@ -2585,7 +2585,7 @@ App.config = App.config || {};
             },
             groups: {
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 1
                 },
                 outer: {
@@ -2604,7 +2604,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2613,7 +2613,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -2621,7 +2621,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -2629,7 +2629,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -2637,7 +2637,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -2647,14 +2647,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'outer',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'outer',
                             index: 2
                         },
@@ -2665,7 +2665,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'outer',
                             when: { ne: { 'attrs/.outer/stroke': 'transparent' }},
                             index: 3
@@ -2673,7 +2673,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'outer',
                             when: {
                                 and: [
@@ -2688,14 +2688,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'inner',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'inner',
                             index: 2
                         },
@@ -2706,7 +2706,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'inner',
                             when: { ne: { 'attrs/.inner/stroke': 'transparent' }},
                             index: 3
@@ -2714,7 +2714,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'inner',
                             when: {
                                 and: [
@@ -2729,7 +2729,7 @@ App.config = App.config || {};
             },
             groups: {
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 1
                 },
                 outer: {
@@ -2748,7 +2748,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2757,7 +2757,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -2765,14 +2765,14 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             index: 3
                         },
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -2780,7 +2780,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -2790,14 +2790,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -2808,7 +2808,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/.outer/stroke': 'transparent' }},
                             index: 3
@@ -2816,7 +2816,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -2831,11 +2831,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -2846,7 +2846,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2855,7 +2855,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -2863,7 +2863,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -2871,7 +2871,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -2879,7 +2879,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -2889,14 +2889,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'outer',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'outer',
                             index: 2
                         },
@@ -2907,7 +2907,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'outer',
                             when: { ne: { 'attrs/.outer/stroke': 'transparent' }},
                             index: 3
@@ -2915,7 +2915,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'outer',
                             when: {
                                 and: [
@@ -2930,14 +2930,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'inner',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'inner',
                             index: 2
                         },
@@ -2948,7 +2948,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'inner',
                             when: { ne: { 'attrs/.inner/stroke': 'transparent' }},
                             index: 3
@@ -2956,7 +2956,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'inner',
                             when: {
                                 and: [
@@ -2971,7 +2971,7 @@ App.config = App.config || {};
             },
             groups: {
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 1
                 },
                 outer: {
@@ -2990,7 +2990,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -2999,7 +2999,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -3007,7 +3007,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -3015,7 +3015,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -3023,7 +3023,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -3033,14 +3033,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'outer',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'outer',
                             index: 2
                         },
@@ -3051,7 +3051,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'outer',
                             when: { ne: { 'attrs/.outer/stroke': 'transparent' }},
                             index: 3
@@ -3059,7 +3059,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'outer',
                             when: {
                                 and: [
@@ -3074,14 +3074,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'inner',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'inner',
                             index: 2
                         },
@@ -3092,7 +3092,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'inner',
                             when: { ne: { 'attrs/.inner/stroke': 'transparent' }},
                             index: 3
@@ -3100,7 +3100,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'inner',
                             when: {
                                 and: [
@@ -3115,7 +3115,7 @@ App.config = App.config || {};
             },
             groups: {
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 1
                 },
                 outer: {
@@ -3134,7 +3134,7 @@ App.config = App.config || {};
                     text: {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'text',
                             index: 1
                         },
@@ -3143,7 +3143,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 2
@@ -3151,7 +3151,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 3
@@ -3159,7 +3159,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 4
@@ -3167,7 +3167,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'attrs/text/text': '' }},
                             index: 5
@@ -3177,14 +3177,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -3195,7 +3195,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/polygon/stroke': 'transparent' }},
                             index: 3
@@ -3203,7 +3203,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -3218,11 +3218,11 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
-                    label: 'Text',
+                    label: '文本',
                     index: 2
                 }
             }
@@ -3234,14 +3234,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'name',
                             index: 4
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'name',
                             index: 5
                         }
@@ -3250,14 +3250,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'attributes',
                             index: 4
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'attributes',
                             index: 5
                         }
@@ -3266,14 +3266,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'methods',
                             index: 4
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'methods',
                             index: 5
                         }
@@ -3326,14 +3326,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'name',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'name',
                             index: 2
                         }
@@ -3342,14 +3342,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'attributes',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'attributes',
                             index: 2
                         }
@@ -3358,14 +3358,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'methods',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'methods',
                             index: 2
                         }
@@ -3418,14 +3418,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'name',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'name',
                             index: 2
                         }
@@ -3434,14 +3434,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'attributes',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'attributes',
                             index: 2
                         }
@@ -3450,14 +3450,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'methods',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'methods',
                             index: 2
                         }
@@ -3523,7 +3523,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'text',
                             when: { ne: { 'name': '' }},
                             index: 5
@@ -3533,14 +3533,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -3551,7 +3551,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/.uml-state-body/stroke': 'transparent' }},
                             index: 4
@@ -3559,7 +3559,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -3583,7 +3583,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'events',
                             when: { ne: { 'events': 0 }},
                             index: 5
@@ -3593,7 +3593,7 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 1
                 },
                 text: {
@@ -3612,7 +3612,7 @@ App.config = App.config || {};
                     '.rank': {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'rank',
                             index: 1
                         },
@@ -3621,7 +3621,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'rank',
                             when: { ne: { 'attrs/.rank/text': '' }},
                             index: 2
@@ -3629,7 +3629,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'rank',
                             when: { ne: { 'attrs/.rank/text': '' }},
                             index: 3
@@ -3637,7 +3637,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'rank',
                             when: { ne: { 'attrs/.rank/text': '' }},
                             index: 4
@@ -3645,7 +3645,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'rank',
                             when: { ne: { 'attrs/.rank/text': '' }},
                             index: 5
@@ -3654,7 +3654,7 @@ App.config = App.config || {};
                     '.name': {
                         text: {
                             type: 'content-editable',
-                            label: 'Text',
+                            label: '文本',
                             group: 'name',
                             index: 1
                         },
@@ -3663,7 +3663,7 @@ App.config = App.config || {};
                             min: 5,
                             max: 80,
                             unit: 'px',
-                            label: 'Font size',
+                            label: '字体大小',
                             group: 'name',
                             when: { ne: { 'attrs/.name/text': '' }},
                             index: 2
@@ -3671,7 +3671,7 @@ App.config = App.config || {};
                         'font-family': {
                             type: 'select-box',
                             options: options.fontFamily,
-                            label: 'Font family',
+                            label: '字体',
                             group: 'name',
                             when: { ne: { 'attrs/.name/text': '' }},
                             index: 3
@@ -3679,7 +3679,7 @@ App.config = App.config || {};
                         'font-weight': {
                             type: 'select-box',
                             options: options.fontWeight,
-                            label: 'Font thickness',
+                            label: '字体粗细',
                             group: 'name',
                             when: { ne: { 'attrs/.name/text': '' }},
                             index: 4
@@ -3687,7 +3687,7 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'name',
                             when: { ne: { 'attrs/.name/text': '' }},
                             index: 5
@@ -3697,14 +3697,14 @@ App.config = App.config || {};
                         fill: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Fill',
+                            label: '填充',
                             group: 'presentation',
                             index: 1
                         },
                         stroke: {
                             type: 'color-palette',
                             options: options.colorPalette,
-                            label: 'Outline',
+                            label: '外边框',
                             group: 'presentation',
                             index: 2
                         },
@@ -3715,7 +3715,7 @@ App.config = App.config || {};
                             step: 1,
                             defaultValue: 1,
                             unit: 'px',
-                            label: 'Outline thickness',
+                            label: '外边框粗细',
                             group: 'presentation',
                             when: { ne: { 'attrs/.card/stroke': 'transparent' }},
                             index: 3
@@ -3723,7 +3723,7 @@ App.config = App.config || {};
                         'stroke-dasharray': {
                             type: 'select-box',
                             options: options.strokeStyle,
-                            label: 'Outline style',
+                            label: '外边框样式',
                             group: 'presentation',
                             when: {
                                 and: [
@@ -3747,7 +3747,7 @@ App.config = App.config || {};
             },
             groups: {
                 presentation: {
-                    label: 'Presentation',
+                    label: '属性',
                     index: 4
                 },
                 rank: {

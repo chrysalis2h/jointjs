@@ -15,7 +15,7 @@ App.config = App.config || {};
                 attrs: {
                     '.handle': {
                         'data-tooltip-class-name': 'small',
-                        'data-tooltip': 'Click to remove the object',
+                        'data-tooltip': '点击后，删除这个元素',
                         'data-tooltip-position': 'right',
                         'data-tooltip-padding': 15
                     }
@@ -28,7 +28,7 @@ App.config = App.config || {};
                 attrs: {
                     '.handle': {
                         'data-tooltip-class-name': 'small',
-                        'data-tooltip': 'Click and drag to clone and connect the object in one go',
+                        'data-tooltip': '点击后，通过拖动，克隆这个元素，并生成当前元素与新元素之间的连线',
                         'data-tooltip-position': 'left',
                         'data-tooltip-padding': 15
                     }
@@ -41,7 +41,7 @@ App.config = App.config || {};
                 attrs: {
                     '.handle': {
                         'data-tooltip-class-name': 'small',
-                        'data-tooltip': 'Click and drag to clone the object',
+                        'data-tooltip': '点击后，通过拖动来克隆一个元素',
                         'data-tooltip-position': 'left',
                         'data-tooltip-padding': 15
                     }
@@ -54,7 +54,7 @@ App.config = App.config || {};
                 attrs: {
                     '.handle': {
                         'data-tooltip-class-name': 'small',
-                        'data-tooltip': 'Click to break all connections to other objects',
+                        'data-tooltip': '点击后，切断与其他元素的连接',
                         'data-tooltip-position': 'right',
                         'data-tooltip-padding': 15
                     }
@@ -67,7 +67,7 @@ App.config = App.config || {};
                 attrs: {
                     '.handle': {
                         'data-tooltip-class-name': 'small',
-                        'data-tooltip': 'Click and drag to connect the object',
+                        'data-tooltip': '点击后，通过拖动与其他元素创建连接',
                         'data-tooltip-position': 'left',
                         'data-tooltip-padding': 15
                     }
@@ -80,7 +80,33 @@ App.config = App.config || {};
                 attrs: {
                     '.handle': {
                         'data-tooltip-class-name': 'small',
-                        'data-tooltip': 'Click and drag to rotate the object',
+                        'data-tooltip': '点击后，通过拖动来对元素进行旋转操作',
+                        'data-tooltip-position': 'right',
+                        'data-tooltip-padding': 15
+                    }
+                }
+            },
+            {
+                name: 'rotate',
+                position: 'n',
+                events: { pointerdown: 'startRotating', pointermove: 'doRotate', pointerup: 'stopBatch' },
+                attrs: {
+                    '.handle': {
+                        'data-tooltip-class-name': 'small',
+                        'data-tooltip': 'N',
+                        'data-tooltip-position': 'right',
+                        'data-tooltip-padding': 15
+                    }
+                }
+            },
+            {
+                name: 'rotate',
+                position: 's',
+                events: { pointerdown: 'startRotating', pointermove: 'doRotate', pointerup: 'stopBatch' },
+                attrs: {
+                    '.handle': {
+                        'data-tooltip-class-name': 'small',
+                        'data-tooltip': 'S',
                         'data-tooltip-position': 'right',
                         'data-tooltip-padding': 15
                     }

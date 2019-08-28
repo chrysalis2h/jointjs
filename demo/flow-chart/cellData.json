@@ -1,0 +1,97 @@
+{
+    "cells": [
+      {
+        "type": "standard.Rectangle",
+        "position": {
+          "x": 350,
+          "y": 340
+        },
+        "size": {
+          "width": 90,
+          "height": 54
+        },
+        "angle": 0,
+        "id": "d0ebafab-3f9b-4445-8456-85faef792fd8",
+        "z": 1,
+        "attrs": {
+          "body": {
+            "stroke": "#31d0c6",
+            "fill": "transparent",
+            "rx": 2,
+            "ry": 2,
+            "width": 50,
+            "height": 30,
+            "strokeDasharray": "0"
+          },
+          "label": {
+            "fontSize": 11,
+            "fill": "#c6c7e2",
+            "text": "rect",
+            "fontFamily": "Roboto Condensed",
+            "fontWeight": "Normal",
+            "strokeWidth": 0
+          },
+          "root": {
+            "dataTooltipPosition": "left",
+            "dataTooltipPositionSelector": ".joint-stencil"
+          }
+        }
+      },
+      {
+        "type": "standard.Rectangle",
+        "position": {
+          "x": 350,
+          "y": 447
+        },
+        "size": {
+          "width": 90,
+          "height": 54
+        },
+        "angle": 0,
+        "id": "5ebdc276-d7f7-4fd5-8473-66ae438c214e",
+        "z": 2,
+        "attrs": {
+          "body": {
+            "stroke": "#31d0c6",
+            "fill": "transparent",
+            "rx": 2,
+            "ry": 2,
+            "width": 50,
+            "height": 30,
+            "strokeDasharray": "0"
+          },
+          "label": {
+            "fontSize": 11,
+            "fill": "#c6c7e2",
+            "text": "rect",
+            "fontFamily": "Roboto Condensed",
+            "fontWeight": "Normal",
+            "strokeWidth": 0
+          },
+          "root": {
+            "dataTooltipPosition": "left",
+            "dataTooltipPositionSelector": ".joint-stencil"
+          }
+        }
+      },
+      {
+        "type": "app.Link",
+        "router": {
+          "name": "normal"
+        },
+        "connector": {
+          "name": "rounded"
+        },
+        "labels": [],
+        "source": {
+          "id": "d0ebafab-3f9b-4445-8456-85faef792fd8"
+        },
+        "target": {
+          "id": "5ebdc276-d7f7-4fd5-8473-66ae438c214e"
+        },
+        "id": "3120275c-bb38-4066-913b-acbcd132e33c",
+        "z": 3,
+        "attrs": {}
+      }
+    ]
+  }
