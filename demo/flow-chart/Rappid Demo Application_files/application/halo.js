@@ -87,9 +87,9 @@ App.config = App.config || {};
                 }
             },
             {
-                name: 'rotate',
+                name: 'resize',
                 position: 'n',
-                events: { pointerdown: 'startRotating', pointermove: 'doRotate', pointerup: 'stopBatch' },
+                // events: { pointerdown: 'alert(1)', pointermove: 'doRotate', pointerup: 'stopBatch' },
                 attrs: {
                     '.handle': {
                         'data-tooltip-class-name': 'small',
@@ -100,9 +100,9 @@ App.config = App.config || {};
                 }
             },
             {
-                name: 'rotate',
+                name: 'direction',
                 position: 's',
-                events: { pointerdown: 'startRotating', pointermove: 'doRotate', pointerup: 'stopBatch' },
+                // events: { pointerdown: 'startRotating', pointermove: 'doRotate', pointerup: 'stopBatch' },
                 attrs: {
                     '.handle': {
                         'data-tooltip-class-name': 'small',

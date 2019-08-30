@@ -129,7 +129,8 @@
         themePicker = new App.ThemePicker({ mainView: app });
         themePicker.render().$el.appendTo(document.body);
         window.addEventListener('load', function () {
-            app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+            // app.graph.fromJSON(JSON.parse(App.config.sampleGraphs.emergencyProcedure));
+            app.graph.fromJSON(JSON.parse(App.config.configMap.test2));
             /* var configMap = App.config.configMap;
             $.ajax({
                 url: configMap.base + configMap.dataUrl,

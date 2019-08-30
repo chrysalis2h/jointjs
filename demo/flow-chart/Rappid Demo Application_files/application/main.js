@@ -1,6 +1,6 @@
 var App = window.App || {};
 
-(function(_, joint) {
+(function (_, joint) {
 
     'use strict';
 
@@ -14,16 +14,16 @@ var App = window.App || {};
             'touchstart': 'removeFocus'
         },
 
-        removeTargetFocus: function(evt) {
+        removeTargetFocus: function (evt) {
             evt.target.blur();
         },
 
-        removeFocus: function() {
+        removeFocus: function () {
             document.activeElement.blur();
             window.getSelection().removeAllRanges();
         },
 
-        init: function() {
+        init: function () {
 
             this.initializePaper();
             this.initializeStencil();
@@ -36,11 +36,11 @@ var App = window.App || {};
         },
 
         // Create a graph, paper and wrap the paper in a PaperScroller.
-        initializePaper: function() {
+        initializePaper: function () {
 
             var graph = this.graph = new joint.dia.Graph;
 
-            graph.on('add', function(cell, collection, opt) {
+            graph.on('add', function (cell, collection, opt) {
                 if (opt.stencil) this.createInspector(cell);
             }, this);
 
@@ -75,7 +75,7 @@ var App = window.App || {};
         },
 
         // Create and populate stencil.
-        initializeStencil: function() {
+        initializeStencil: function () {
 
             var stencil = this.stencil = new joint.ui.Stencil({
                 paper: this.paperScroller,
@@ -92,7 +92,7 @@ var App = window.App || {};
                 // Use default Grid Layout
                 layout: true,
                 // Remove tooltip definition from clone
-                dragStartClone: function(cell) {
+                dragStartClone: function (cell) {
                     return cell.clone().removeAttr('root/dataTooltip');
                 }
             });
@@ -101,24 +101,24 @@ var App = window.App || {};
             stencil.render().load(App.config.stencil.shapes);
         },
 
-        initializeKeyboardShortcuts: function() {
+        initializeKeyboardShortcuts: function () {
 
             this.keyboard = new joint.ui.Keyboard();
             this.keyboard.on({
 
-                'ctrl+c': function() {
+                'ctrl+c': function () {
                     // Copy all selected elements and their associated links.
                     this.clipboard.copyElements(this.selection.collection, this.graph);
                 },
 
-                'ctrl+v': function() {
+                'ctrl+v': function () {
 
                     var pastedCells = this.clipboard.pasteCells(this.graph, {
                         translate: { dx: 20, dy: 20 },
                         useLocalStorage: true
                     });
 
-                    var elements = _.filter(pastedCells, function(cell) {
+                    var elements = _.filter(pastedCells, function (cell) {
                         return cell.isElement();
                     });
 
@@ -127,51 +127,51 @@ var App = window.App || {};
                     this.selection.collection.reset(elements);
                 },
 
-                'ctrl+x shift+delete': function() {
+                'ctrl+x shift+delete': function () {
                     this.clipboard.cutElements(this.selection.collection, this.graph);
                 },
 
-                'delete backspace': function(evt) {
+                'delete backspace': function (evt) {
                     evt.preventDefault();
                     this.graph.removeCells(this.selection.collection.toArray());
                 },
 
-                'ctrl+z': function() {
+                'ctrl+z': function () {
                     this.commandManager.undo();
                     this.selection.cancelSelection();
                 },
 
-                'ctrl+y': function() {
+                'ctrl+y': function () {
                     this.commandManager.redo();
                     this.selection.cancelSelection();
                 },
 
-                'ctrl+a': function() {
+                'ctrl+a': function () {
                     this.selection.collection.reset(this.graph.getElements());
                 },
 
-                'ctrl+plus': function(evt) {
+                'ctrl+plus': function (evt) {
                     evt.preventDefault();
                     this.paperScroller.zoom(0.2, { max: 5, grid: 0.2 });
                 },
 
-                'ctrl+minus': function(evt) {
+                'ctrl+minus': function (evt) {
                     evt.preventDefault();
                     this.paperScroller.zoom(-0.2, { min: 0.2, grid: 0.2 });
                 },
 
-                'keydown:shift': function(evt) {
+                'keydown:shift': function (evt) {
                     this.paperScroller.setCursor('crosshair');
                 },
 
-                'keyup:shift': function() {
+                'keyup:shift': function () {
                     this.paperScroller.setCursor('grab');
                 }
 
             }, this);
         },
 
-        initializeSelection: function() {
+        initializeSelection: function () {
 
             this.clipboard = new joint.ui.Clipboard();
             this.selection = new joint.ui.Selection({
@@ -182,7 +182,7 @@ var App = window.App || {};
 
             // Initiate selecting when the user grabs the blank area of the paper while the Shift key is pressed.
             // Otherwise, initiate paper pan.
-            this.paper.on('blank:pointerdown', function(evt, x, y) {
+            this.paper.on('blank:pointerdown', function (evt, x, y) {
 
                 if (this.keyboard.isActive('shift', evt)) {
                     this.selection.startSelecting(evt);
@@ -194,7 +194,7 @@ var App = window.App || {};
 
             }, this);
 
-            this.paper.on('element:pointerdown', function(elementView, evt) {
+            this.paper.on('element:pointerdown', function (elementView, evt) {
 
                 // Select an element if CTRL/Meta key is pressed while the element is clicked.
                 if (this.keyboard.isActive('ctrl meta', evt)) {
@@ -203,7 +203,7 @@ var App = window.App || {};
 
             }, this);
 
-            this.selection.on('selection-box:pointerdown', function(elementView, evt) {
+            this.selection.on('selection-box:pointerdown', function (elementView, evt) {
 
                 // Unselect an element if the CTRL/Meta key is pressed while a selected element is clicked.
                 if (this.keyboard.isActive('ctrl meta', evt)) {
@@ -214,18 +214,18 @@ var App = window.App || {};
             }, this);
         },
 
-        createInspector: function(cell) {
+        createInspector: function (cell) {
 
             return joint.ui.Inspector.create('.inspector-container', _.extend({
                 cell: cell
             }, App.config.inspector[cell.get('type')]));
         },
 
-        initializeToolsAndInspector: function() {
+        initializeToolsAndInspector: function () {
 
             this.paper.on({
                 // 绑定事件操作：元素的点击、线的点击、浮动到线上、离开浮动到线上
-                'element:pointerup': function(elementView) {
+                'element:pointerup': function (elementView) {
 
                     var element = elementView.model;
 
@@ -237,11 +237,20 @@ var App = window.App || {};
                         preserveAspectRatio: !!element.get('preserveAspectRatio'),
                         allowOrthogonalResize: element.get('allowOrthogonalResize') !== false
                     }).render();
-                    
-                    new joint.ui.Halo({
+
+
+                    var halo = new joint.ui.Halo({
                         cellView: elementView,
                         handles: App.config.halo.handles
-                    }).render();
+                    });
+                    //增加自定义事件--start
+                    // var openDialogFunc = this.openDialog();
+                    halo.on('action:direction:pointerdown', function (evt) {
+                        console.dir(evt)
+                        evt.stopPropagation();
+                    });
+                    //增加自定义事件--end
+                    halo.render();
 
                     this.selection.collection.reset([]);
                     this.selection.collection.add(element, { silent: true });
@@ -251,7 +260,7 @@ var App = window.App || {};
                     this.createInspector(element);
                 },
 
-                'link:pointerup': function(linkView) {
+                'link:pointerup': function (linkView) {
 
                     var link = linkView.model;
 
@@ -283,7 +292,7 @@ var App = window.App || {};
                     this.createInspector(link);
                 },
 
-                'link:mouseenter': function(linkView) {
+                'link:mouseenter': function (linkView) {
 
                     // Open tool only if there is none yet
                     if (linkView.hasTools()) return;
@@ -301,7 +310,7 @@ var App = window.App || {};
                     linkView.addTools(toolsView);
                 },
 
-                'link:mouseleave': function(linkView) {
+                'link:mouseleave': function (linkView) {
                     // Remove only the hover tool, not the pointerdown tool
                     if (linkView.hasTools('link-hover')) {
                         linkView.removeTools();
@@ -310,7 +319,7 @@ var App = window.App || {};
 
             }, this);
 
-            this.graph.on('change', function(cell, opt) {
+            this.graph.on('change', function (cell, opt) {
 
                 if (!cell.isLink() || !opt.inspector) return;
 
@@ -327,7 +336,7 @@ var App = window.App || {};
             }, this)
         },
 
-        initializeNavigator: function() {
+        initializeNavigator: function () {
 
             var navigator = this.navigator = new joint.ui.Navigator({
                 width: 240,
@@ -350,7 +359,7 @@ var App = window.App || {};
             navigator.render();
         },
 
-        initializeToolbar: function() {
+        initializeToolbar: function () {
 
             var toolbar = this.toolbar = new joint.ui.Toolbar({
                 groups: App.config.toolbar.groups,
@@ -377,15 +386,15 @@ var App = window.App || {};
             this.$('.toolbar-container').append(toolbar.el);
             toolbar.render();
         },
-        
-        applyOnSelection: function(method) {
+
+        applyOnSelection: function (method) {
             // 不懂这个方法是干嘛的
             this.graph.startBatch('selection');
-            this.selection.collection.models.forEach(function(model) { model[method](); });
+            this.selection.collection.models.forEach(function (model) { model[method](); });
             this.graph.stopBatch('selection');
         },
 
-        changeSnapLines: function(checked) {
+        changeSnapLines: function (checked) {
 
             if (checked) {
                 this.snaplines.startListening();
@@ -396,7 +405,7 @@ var App = window.App || {};
             }
         },
 
-        initializeTooltips: function() {
+        initializeTooltips: function () {
 
             new joint.ui.Tooltip({
                 rootTarget: document.body,
@@ -409,10 +418,10 @@ var App = window.App || {};
         // backwards compatibility for older shapes
         exportStylesheet: '.scalable * { vector-effect: non-scaling-stroke }',
 
-        openAsSVG: function() {
+        openAsSVG: function () {
 
             var paper = this.paper;
-            paper.hideTools().toSVG(function(svg) {
+            paper.hideTools().toSVG(function (svg) {
                 new joint.ui.Lightbox({
                     image: 'data:image/svg+xml,' + encodeURIComponent(svg),
                     downloadable: true,
@@ -420,17 +429,17 @@ var App = window.App || {};
                 }).open();
                 paper.showTools();
             }, {
-                preserveDimensions: true,
-                convertImagesToDataUris: true,
-                useComputedStyles: false,
-                stylesheet: this.exportStylesheet
-            });
+                    preserveDimensions: true,
+                    convertImagesToDataUris: true,
+                    useComputedStyles: false,
+                    stylesheet: this.exportStylesheet
+                });
         },
 
-        openAsPNG: function() {
+        openAsPNG: function () {
 
             var paper = this.paper;
-            paper.hideTools().toPNG(function(dataURL) {
+            paper.hideTools().toPNG(function (dataURL) {
                 new joint.ui.Lightbox({
                     image: dataURL,
                     downloadable: true,
@@ -438,13 +447,13 @@ var App = window.App || {};
                 }).open();
                 paper.showTools();
             }, {
-                padding: 10,
-                useComputedStyles: false,
-                stylesheet: this.exportStylesheet
-            });
+                    padding: 10,
+                    useComputedStyles: false,
+                    stylesheet: this.exportStylesheet
+                });
         },
 
-        onMousewheel: function(cellView, evt, x, y, delta) {
+        onMousewheel: function (cellView, evt, x, y, delta) {
 
             if (this.keyboard.isActive('alt', evt)) {
                 evt.preventDefault();
@@ -452,7 +461,7 @@ var App = window.App || {};
             }
         },
 
-        layoutDirectedGraph: function() {
+        layoutDirectedGraph: function () {
 
             joint.layout.DirectedGraph.layout(this.graph, {
                 setLinkVertices: true,
@@ -464,10 +473,16 @@ var App = window.App || {};
             this.paperScroller.centerContent();
         },
         // 下面这些是新增的
-        save: function() {
+        openDialog: function() {
+            alert("openDialog");
+        },
+        save: function () {
             // 这里来保存数据
             // alert("数据已经保存");
             var graph = this.graph;
+            // console.dir(graph.getCells())
+            // console.dir(graph.getElements())
+            // console.dir(graph.getLinks())
             console.info(JSON.stringify(graph.toJSON()));
             // graph.toJSON()  获取全部数据
             // 
@@ -492,6 +507,12 @@ var App = window.App || {};
                     });
                 }
             }); */
+            /* var dialog = new joint.ui.Dialog({
+                width: 300,
+                title: 'My title',
+                content: 'This is my dialog box.'
+            });
+            dialog.open(); */
         }
     });
 

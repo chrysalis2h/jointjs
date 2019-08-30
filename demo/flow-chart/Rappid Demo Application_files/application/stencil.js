@@ -43,7 +43,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0
                 }
             }
@@ -70,7 +70,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0
                 }
             }
@@ -98,7 +98,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0
                 }
             },
@@ -131,7 +131,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0
                 }
             },
@@ -164,7 +164,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0
                 }
             }
@@ -195,7 +195,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0
                 }
             }
@@ -222,7 +222,7 @@ App.config = App.config || {};
                     text: 'image',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     fill: '#c6c7e2'
                 }
             }
@@ -250,7 +250,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0
                 }
             }
@@ -280,7 +280,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0
                 }
             }
@@ -317,7 +317,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0,
                     refY2: 12,
                 },
@@ -326,7 +326,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     fontFamily: 'Roboto Condensed',
                     fontWeight: 'Normal',
-                    fontSize: 11,
+                    fontSize: 14,
                     strokeWidth: 0,
                     refY: 12
                 }
@@ -356,7 +356,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11,
+                    'font-size': 14,
                     'stroke-width': 0
                 }
             }
@@ -385,7 +385,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11,
+                    'font-size': 14,
                     'stroke-width': 0
                 }
             }
@@ -410,7 +410,7 @@ App.config = App.config || {};
                     fill: '#c6c7e2',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11,
+                    'font-size': 14,
                     'stroke-width': 0
                 }
             }
@@ -497,7 +497,7 @@ App.config = App.config || {};
                 },
                 text: {
                     text: 'Entity',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
                     fill: '#f6f6f6',
@@ -528,7 +528,7 @@ App.config = App.config || {};
                 },
                 text: {
                     text: 'Weak entity',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
                     fill: '#f6f6f6',
@@ -552,7 +552,7 @@ App.config = App.config || {};
                 },
                 text: {
                     text: 'Relation',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
                     fill: '#f6f6f6',
@@ -580,7 +580,7 @@ App.config = App.config || {};
                 },
                 text: {
                     text: 'Relation',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
                     fill: '#f6f6f6',
@@ -602,7 +602,7 @@ App.config = App.config || {};
                     'letter-spacing': 0,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 },
                 polygon: {
                     fill: '#feb663',
@@ -632,7 +632,7 @@ App.config = App.config || {};
                 },
                 text: {
                     text: 'Key',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
                     fill: '#f6f6f6',
@@ -655,7 +655,7 @@ App.config = App.config || {};
                 },
                 text: {
                     text: 'Normal',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
                     fill: '#f6f6f6',
@@ -685,7 +685,7 @@ App.config = App.config || {};
                 },
                 text: {
                     text: 'MultiValued',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
                     fill: '#f6f6f6',
@@ -717,7 +717,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11,
+                    'font-size': 14,
                     'stroke-width': 0
                 }
             }
@@ -772,7 +772,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 },
                 '.uml-class-attrs-text': {
                     ref: '.uml-class-attrs-rect',
@@ -781,7 +781,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 },
                 '.uml-class-methods-text': {
                     ref: '.uml-class-methods-rect',
@@ -790,7 +790,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 }
             }
         },
@@ -837,7 +837,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 },
                 '.uml-class-attrs-text': {
                     ref: '.uml-class-attrs-rect',
@@ -845,7 +845,7 @@ App.config = App.config || {};
                     'y-alignment': 'middle',
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
-                    'font-size': 11
+                    'font-size': 14
                 },
                 '.uml-class-methods-text': {
                     ref: '.uml-class-methods-rect',
@@ -854,7 +854,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 }
             }
         },
@@ -901,7 +901,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 },
                 '.uml-class-attrs-text': {
                     ref: '.uml-class-attrs-rect',
@@ -910,7 +910,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 },
                 '.uml-class-methods-text': {
                     ref: '.uml-class-methods-rect',
@@ -919,7 +919,7 @@ App.config = App.config || {};
                     fill: '#f6f6f6',
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal',
-                    'font-size': 11
+                    'font-size': 14
                 }
             }
         },
@@ -953,13 +953,13 @@ App.config = App.config || {};
                 },
                 '.uml-state-name': {
                     fill: '#f6f6f6',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal'
                 },
                 '.uml-state-events': {
                     fill: '#f6f6f6',
-                    'font-size': 11,
+                    'font-size': 14,
                     'font-family': 'Roboto Condensed',
                     'font-weight': 'Normal'
                 }

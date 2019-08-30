@@ -13,6 +13,7 @@ App.config = App.config || {};
   App.config.configMap = {
     base: '',
     dataUrl: '',
+    test2: '{"cells":[{"type":"standard.Ellipse","position":{"x":420,"y":300},"size":{"width":90,"height":54},"angle":0,"id":"40fc3155-f882-414a-9a9c-fde5d7590e4d","z":1,"attrs":{"body":{"stroke":"#31d0c6","fill":"transparent","width":50,"height":30,"strokeDasharray":"0"},"label":{"fill":"#c6c7e2","text":"ellipse","fontFamily":"Roboto Condensed","fontWeight":"Normal","strokeWidth":0},"root":{"dataTooltipPosition":"left","dataTooltipPositionSelector":".joint-stencil"}}}]}'
 
   };
 
