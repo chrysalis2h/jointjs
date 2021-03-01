@@ -81,7 +81,7 @@
     "mocha": "5.2.0",
     "open-sans-fontface": "https://github.com/clientIO/open-sans/archive/1.4.2.tar.gz",
     "phantomjs-prebuilt": "2.1.16",
-    "prismjs": "1.15.0",
+    "prismjs": "1.23.0",
     "qunit": "2.8.0",
     "requirejs": "2.3.6",
     "rollup": "1.0.0",
