@@ -51,7 +51,7 @@
     "chai": "4.2.0",
     "cheerio": "0.22.0",
     "es-module-shims": "0.2.4",
-    "express": "4.16.3",
+    "express": "4.17.3",
     "grunt": "^1.0.3",
     "grunt-browserify": "5.3.0",
     "grunt-compile-docs": "1.2.1",
